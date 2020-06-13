@@ -99,12 +99,9 @@ cd identify-dogs
 ## Results
 
 In the jupyter notebook, I followed the given steps provided in the notebook:
-1. I built a CNN from scratch to classify dog breeds, and attained the test
- accuracy about 10%.
-2. I built a CNN using transfer learning, pre-trained VGG-16   model as a
- fixed feature extractor, and attained the test accuracy about 39%.
-2. I built a CNN using transfer learning, pre-trained Xception model as a
- fixed feature extractor, and attained the test accuracy about 85%.
+1. I built a CNN from scratch to classify dog breeds, and attained the test accuracy about 9.2%.
+2. I built a CNN using transfer learning, pre-trained VGG-16   model as a fixed feature extractor, and attained the test accuracy about 42%.
+2. I built a CNN using transfer learning, pre-trained ResNet50 model as a fixed feature extractor, and attained the test accuracy about 80%.
 
 Possible improvement can be implement:
 1. Add image augmentation to handle different angles, magnitude, position and
