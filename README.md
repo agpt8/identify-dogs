@@ -83,7 +83,6 @@ cd identify-dogs
     ```commandline
     conda env create -f environment.yml
     conda activate identify-dogs
-    pip install -r requirements.txt
     ```
 
 7. Switch [Keras backend](https://keras.io/backend/) to TensorFlow. 
