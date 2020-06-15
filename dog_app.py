@@ -108,33 +108,29 @@ print(f'There are {len(test_files):d} test dog images.')
 # In[2]:
 
 
-# Export the dog_names list to csv to avoid upload huge
-# dog_files to Udacity Workspace IDE for model training
-import numpy as np
-
-np.savetxt("data/dog_names.csv", dog_names, delimiter=",", fmt='%s')
+dog_names
 
 # In[3]:
 
 
-dog_names
-
-# In[93]:
-
-
 # Concatenate training, testing, and validation datasets
-targets = np.concatenate((test_targets, train_targets, valid_targets), axis=0)
+targets = np.concatenate((test_targets, train_targets, valid_targets))
+
+# In[4]:
+
+
 # Number of dogs per category
 num_per_breed = targets.sum(axis=0)
+num_per_breed
 
-# In[100]:
+# In[5]:
 
 
 print(f'Maximum number of dogs per category is {num_per_breed.max()}')
 print(f'Minimum number of dogs per category is {num_per_breed.min()}')
 print(f'Average number of dogs per category is {num_per_breed.mean():.2f}')
 
-# In[97]:
+# In[6]:
 
 
 # Plot the number of dogs per category
@@ -142,8 +138,8 @@ import matplotlib.pyplot as plt
 
 get_ipython().run_line_magic('matplotlib', 'inline')
 
-plt.figure(figsize=[10, 8])
-plt.bar(x=range(0, 133), height=targets.sum(axis=0))
+plt.figure(figsize=[15, 8])
+plt.bar(x=range(0, 133), height=num_per_breed)
 plt.xlabel('Category')
 plt.ylabel('Number of dogs')
 plt.title('Number of Dogs per Category');
@@ -156,7 +152,6 @@ plt.title('Number of Dogs per Category');
 
 
 import random
-
 random.seed(8675309)
 
 # load filenames in shuffled human dataset
@@ -165,6 +160,7 @@ random.shuffle(human_files)
 
 # print statistics about the dataset
 print(f'There are {len(human_files)} total human images.')
+
 
 # ---
 # <a id='step1'></a>
@@ -179,7 +175,6 @@ print(f'There are {len(human_files)} total human images.')
 
 import cv2
 import matplotlib.pyplot as plt
-
 get_ipython().run_line_magic('matplotlib', 'inline')
 
 # extract pre-trained face detector
@@ -223,6 +218,17 @@ plt.show()
 
 # returns "True" if face is detected in image stored at img_path
 def face_detector(img_path):
+    """
+    This function takes a path to an image as input and returns True or False 
+    representing whether a face is detected in the image or not
+
+    Parameter:
+    img_path: the path of the image user wants to identify the possible dog 
+    breed
+    
+    Returns:
+    True or False representing whether a face is detected in the image or not
+    """
     img = cv2.imread(img_path)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     faces = face_cascade.detectMultiScale(gray)
@@ -270,7 +276,7 @@ print(
 # 
 # We suggest the face detector from OpenCV as a potential way to detect human images in your algorithm, but you are free to explore other approaches, especially approaches that make use of deep learning :).  Please use the code cell below to design and test your own face detection algorithm.  If you decide to pursue this _optional_ task, report performance on each of the datasets.
 
-# In[10]:
+# In[11]:
 
 
 # (Optional) TODO: Report the performance of another
@@ -284,7 +290,7 @@ print(
 # 
 # In this section, we use a pre-trained [ResNet-50](http://ethereon.github.io/netscope/#/gist/db945b393d40bfa26006) model to detect dogs in images.  Our first line of code downloads the ResNet-50 model, along with weights that have been trained on [ImageNet](http://www.image-net.org/), a very large, very popular dataset used for image classification and other vision tasks.  ImageNet contains over 10 million URLs, each linking to an image containing an object from one of [1000 categories](https://gist.github.com/yrevar/942d3a0ac09ec9e5eb3a).  Given an image, this pre-trained ResNet-50 model returns a prediction (derived from the available categories in ImageNet) for the object that is contained in the image.
 
-# In[67]:
+# In[12]:
 
 
 from keras.applications.resnet50 import ResNet50
@@ -293,8 +299,8 @@ from keras.applications.resnet50 import ResNet50
 # changing the name of the variable here as it would shadow the variable while
 # architecting the model below causing an error as the shape of the 
 # model changes
-ResNet50_mod = ResNet50(weights='imagenet')
-ResNet50_mod.summary()
+resnet50_model = ResNet50(weights='imagenet')
+resnet50_model.summary()
 
 # ### Pre-process the Data
 # 
@@ -328,16 +334,38 @@ from tqdm import tqdm
 
 
 def path_to_tensor(img_path):
+    """
+    This function takes a string-valued file path to a color image as input and 
+    returns a 4D tensor suitable for supplying to a Keras CNN.
+
+    Parameter:
+    img_path: the path of the dog breeds project dataset
+    
+    Returns:
+    a 4D tensor with shape (1,224,224,3) suitable for supplying to a Keras CNN
+    """
     # loads RGB image as PIL.Image.Image type
     img = image.load_img(img_path, target_size=(224, 224))
     # convert PIL.Image.Image type to 3D tensor with shape (224, 224, 3)
     x = image.img_to_array(img)
-    # convert 3D tensor to 4D tensor with shape (1, 224, 224, 3) and return 4D tensor
+    # convert 3D tensor to 4D tensor with shape (1, 224, 224, 3) and return 
+    # 4D tensor
     return np.expand_dims(x, axis=0)
 
 
 def paths_to_tensor(img_paths):
-    list_of_tensors = [path_to_tensor(img_path) for img_path in tqdm(img_paths)]
+    """
+    This function takes a numpy array of string-valued image paths as input 
+    and returns a 4D tensor with shape
+
+    Parameter:
+    img_paths: a numpy array of string-valued image paths
+    
+    Returns:
+    a 4D tensor with shape (nb_samples,224,224,3)
+    """
+    list_of_tensors = [path_to_tensor(img_path)
+                       for img_path in tqdm(img_paths)]
     return np.vstack(list_of_tensors)
 
 
@@ -356,9 +384,19 @@ from keras.applications.resnet50 import preprocess_input
 
 
 def ResNet50_predict_labels(img_path):
+    """
+    This function takes a string-valued file path to a color image as input and 
+    returns prediction vector for image located at img_path
+
+    Parameter:
+    img_path: the path of the dog breeds project dataset
+    
+    Returns:
+    prediction vector for image located at img_path
+    """
     # returns prediction vector for image located at img_path
     img = preprocess_input(path_to_tensor(img_path))
-    return np.argmax(ResNet50_mod.predict(img))
+    return np.argmax(resnet50_model.predict(img))
 
 
 # ### Write a Dog Detector
@@ -370,8 +408,17 @@ def ResNet50_predict_labels(img_path):
 # In[15]:
 
 
-### returns "True" if a dog is detected in the image stored at img_path
 def dog_detector(img_path):
+    """
+    This function takes a path to an image as input and returns True or False 
+    representing whether a dog is detected in the image or not
+
+    Parameter:
+    img_path: the path of the image user wants to identify
+    
+    Returns:
+    True or False representing whether a dog is detected in the image or not
+    """
     prediction = ResNet50_predict_labels(img_path)
     return ((prediction <= 268) & (prediction >= 151))
 
@@ -389,7 +436,7 @@ def dog_detector(img_path):
 # 100% of the images in dog_files_short have a detected dog.
 # 
 
-# In[17]:
+# In[16]:
 
 
 dog_face_in_human_file = (
@@ -437,7 +484,7 @@ print(
 # 
 # We rescale the images by dividing every pixel in every image by 255.
 
-# In[18]:
+# In[17]:
 
 
 from PIL import ImageFile
@@ -465,7 +512,7 @@ test_tensors = paths_to_tensor(test_files).astype('float32') / 255
 # 
 # I used the architecture shown above because it has three stacked layers of convolution network and max pooling layers with a layer of global average pooling and a dense network at the end. Due to the stacked nature of the network, using larger patterns becomes possible. This is similar to what was taught in the lectures.
 
-# In[20]:
+# In[18]:
 
 
 from keras.layers import Conv2D, MaxPooling2D, GlobalAveragePooling2D
@@ -486,13 +533,15 @@ model.add(Dense(133, activation='softmax'))
 
 model.summary()
 
+
 # ### Compile the Model
 
-# In[21]:
+# In[19]:
 
 
 model.compile(optimizer='rmsprop', loss='categorical_crossentropy',
               metrics=['accuracy'])
+
 
 # ### (IMPLEMENTATION) Train the Model
 # 
@@ -500,7 +549,7 @@ model.compile(optimizer='rmsprop', loss='categorical_crossentropy',
 # 
 # You are welcome to [augment the training data](https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html), but this is not a requirement. 
 
-# In[22]:
+# In[20]:
 
 
 from keras.callbacks import ModelCheckpoint
@@ -517,18 +566,20 @@ model.fit(train_tensors, train_targets, validation_data=(valid_tensors,
                                                          valid_targets),
           epochs=epochs, batch_size=20, callbacks=[checkpointer], verbose=1)
 
+
 # ### Load the Model with the Best Validation Loss
 
-# In[23]:
+# In[21]:
 
 
 model.load_weights('saved_models/weights.best.from_scratch.hdf5')
+
 
 # ### Test the Model
 # 
 # Try out your model on the test dataset of dog images.  Ensure that your test accuracy is greater than 1%.
 
-# In[25]:
+# In[22]:
 
 
 # get index of predicted dog breed for each image in test set
@@ -550,7 +601,7 @@ print(f'Test accuracy: {test_accuracy:.4f}%')
 # 
 # ### Obtain Bottleneck Features
 
-# In[26]:
+# In[23]:
 
 
 bottleneck_features = np.load('bottleneck_features/DogVGG16Data.npz')
@@ -558,11 +609,12 @@ train_VGG16 = bottleneck_features['train']
 valid_VGG16 = bottleneck_features['valid']
 test_VGG16 = bottleneck_features['test']
 
+
 # ### Model Architecture
 # 
 # The model uses the the pre-trained VGG-16 model as a fixed feature extractor, where the last convolutional output of VGG-16 is fed as input to our model.  We only add a global average pooling layer and a fully connected layer, where the latter contains one node for each dog category and is equipped with a softmax.
 
-# In[27]:
+# In[24]:
 
 
 VGG16_model = Sequential()
@@ -571,17 +623,19 @@ VGG16_model.add(Dense(133, activation='softmax'))
 
 VGG16_model.summary()
 
+
 # ### Compile the Model
 
-# In[28]:
+# In[25]:
 
 
 VGG16_model.compile(loss='categorical_crossentropy', optimizer='rmsprop',
                     metrics=['accuracy'])
 
+
 # ### Train the Model
 
-# In[29]:
+# In[26]:
 
 
 checkpointer = ModelCheckpoint(filepath='saved_models/weights.best.VGG16.hdf5',
@@ -591,18 +645,20 @@ VGG16_model.fit(train_VGG16, train_targets,
                 validation_data=(valid_VGG16, valid_targets),
                 epochs=20, batch_size=20, callbacks=[checkpointer], verbose=1)
 
+
 # ### Load the Model with the Best Validation Loss
 
-# In[30]:
+# In[27]:
 
 
 VGG16_model.load_weights('saved_models/weights.best.VGG16.hdf5')
+
 
 # ### Test the Model
 # 
 # Now, we can use the CNN to test how well it identifies breed within our test dataset of dog images.  We print the test accuracy below.
 
-# In[31]:
+# In[28]:
 
 
 # get index of predicted dog breed for each image in test set
@@ -617,10 +673,21 @@ print(f'Test accuracy: {test_accuracy:.4f}%')
 
 # ### Predict Dog Breed with the Model
 
-# In[32]:
+# In[29]:
 
 
 def VGG16_predict_breed(img_path):
+    """
+    This function takes a path to an image as input and returns the dog 
+    breed that is predicted by the model.
+
+    Parameter:
+    img_path: the path of the image user wants to identify the possible dog 
+    breed
+    
+    Returns:
+    The possible dog breed (name from the dog_names list) predicted
+    """
     # extract bottleneck features
     bottleneck_feature = extract_VGG16(path_to_tensor(img_path))
     # obtain predicted vector
@@ -656,7 +723,7 @@ def VGG16_predict_breed(img_path):
 #     valid_{network} = bottleneck_features['valid']
 #     test_{network} = bottleneck_features['test']
 
-# In[37]:
+# In[30]:
 
 
 bottleneck_features = np.load('bottleneck_features/DogResnet50Data.npz')
@@ -667,6 +734,7 @@ test_ResNet50 = bottleneck_features['test']
 print(train_ResNet50.shape)
 print(valid_ResNet50.shape)
 print(test_ResNet50.shape)
+
 
 # ### (IMPLEMENTATION) Model Architecture
 # 
@@ -680,7 +748,7 @@ print(test_ResNet50.shape)
 # 
 # ResNet50 obtained the highest test accuracy among VGG16, VGG19, Inception and ResNet50 architectures. Using ResNet combined with the Global Average Pooling and a densenet with softmax activation allows effective classification of the images with relatively low usage of computaton power, so I went ahead with ResNet50. I used the VGG16 above  as an example to implement the ResNet50 version below
 
-# In[39]:
+# In[31]:
 
 
 # Used this variable name here to avoid shadowing from the one (changed now due 
@@ -694,7 +762,7 @@ ResNet50_model.summary()
 
 # ### (IMPLEMENTATION) Compile the Model
 
-# In[43]:
+# In[32]:
 
 
 ResNet50_model.compile(loss='categorical_crossentropy', optimizer='rmsprop',
@@ -706,7 +774,7 @@ ResNet50_model.compile(loss='categorical_crossentropy', optimizer='rmsprop',
 # 
 # You are welcome to [augment the training data](https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html), but this is not a requirement. 
 
-# In[46]:
+# In[33]:
 
 
 checkpointer = ModelCheckpoint(
@@ -720,7 +788,7 @@ ResNet50_model.fit(train_ResNet50, train_targets,
 
 # ### (IMPLEMENTATION) Load the Model with the Best Validation Loss
 
-# In[48]:
+# In[34]:
 
 
 ResNet50_model.load_weights('saved_models/weights.best.ResNet50.hdf5')
@@ -729,7 +797,7 @@ ResNet50_model.load_weights('saved_models/weights.best.ResNet50.hdf5')
 # 
 # Try out your model on the test dataset of dog images. Ensure that your test accuracy is greater than 60%.
 
-# In[50]:
+# In[35]:
 
 
 ResNet50_predictions = [
@@ -757,45 +825,48 @@ print(f'Test accuracy: {test_accuracy:.4f}%')
 #     
 # where `{network}`, in the above filename, should be one of `VGG19`, `Resnet50`, `InceptionV3`, or `Xception`.
 
-# In[80]:
+# In[37]:
 
 
 from extract_bottleneck_features import *
-
 
 def identify_dog(img_path):
     """
     Identify dog breed for the image stored at img_path
     
-    INPUT:
-        img_path: path of image for which prediction has to be made
-    OUTPUT:
-        breed of the dog
+    Parameter:
+    img_path: path of image for which prediction has to be made
+    
+    Returns:
+    breed of the dog
     """
+    # extract bottleneck features
     bottleneck_feature = extract_Resnet50(path_to_tensor(img_path))
 
     print(bottleneck_feature.shape)
 
-    #     bottleneck_feature = np.expand_dims(bottleneck_feature, axis=0)
-    #     bottleneck_feature = np.expand_dims(bottleneck_feature, axis=0)
+    # bottleneck_feature = np.expand_dims(bottleneck_feature, axis=0)
+    # bottleneck_feature = np.expand_dims(bottleneck_feature, axis=0)
 
+    # obtain predicted vector
     predicted_vector = ResNet50_model.predict(bottleneck_feature)
-
+    # store the maxinum index of the vector
     prediction = np.argmax(predicted_vector)
-
+    # extract the breed name from the stored value
     dog_name = dog_names[prediction].split('.')[-1]
 
-    #     print(f'This image looks like a {dog_names[prediction].split(".")[-1]}.' )
+    # print(f'This image looks like a {dog_names[prediction].split(".")[-1]}.' )
 
     return dog_name
 
+
+img_path = 'uploads/image2.jpg'
 
 # converting images to gray
 img = cv2.imread(img_path)
 # showing the boundry box in the end
 plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
 
-img_path = 'uploads/image2.jpg'
 prediction = identify_dog(img_path)
 
 
@@ -817,7 +888,7 @@ prediction = identify_dog(img_path)
 # This photo looks like an Afghan Hound.
 # ### (IMPLEMENTATION) Write your Algorithm
 
-# In[90]:
+# In[38]:
 
 
 def algorithm(img_path):
@@ -833,7 +904,7 @@ def algorithm(img_path):
 
     # converting images to gray
     img = cv2.imread(img_path)
-    # showing the boundry box in the end
+    # show the boundry box in the end
     plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
     plt.show()
 
@@ -876,9 +947,9 @@ def algorithm(img_path):
 # 
 # 6. Using larger datasets for better accuracy.
 
-# In[91]:
+# In[39]:
 
 
-for img_path in sorted(glob("uploads/*")):
+for img_path in sorted(glob("uploads/*.jpg")):
     print(img_path)
     algorithm(img_path)

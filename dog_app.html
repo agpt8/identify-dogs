@@ -5,10 +5,10 @@
 
     <title>dog_app</title>
 
-    <script type="text/javascript" nonce="df29f2f96e28414d8ddcb476af2"
-            src="//local.adguard.org?ts=1592203380661&amp;type=content-script&amp;dmn=viewooizm3ck72.udacity-student-workspaces.com&amp;css=1&amp;js=1&amp;gcss=1&amp;rel=1&amp;rji=1"></script>
-    <script type="text/javascript" nonce="df29f2f96e28414d8ddcb476af2"
-            src="//local.adguard.org?ts=1592203380661&amp;name=AdGuard%20Popup%20Blocker%20%28Beta%29&amp;name=Web%20of%20Trust%20Beta&amp;name=AdGuard%20Extra%20Beta&amp;type=user-script"></script>
+    <script type="text/javascript" nonce="965cd62f9b014db18390297df18"
+            src="//local.adguard.org?ts=1592218386824&amp;type=content-script&amp;dmn=viewooizm3ck72.udacity-student-workspaces.com&amp;css=1&amp;js=1&amp;gcss=1&amp;rel=1&amp;rji=1"></script>
+    <script type="text/javascript" nonce="965cd62f9b014db18390297df18"
+            src="//local.adguard.org?ts=1592218386824&amp;name=AdGuard%20Popup%20Blocker%20%28Beta%29&amp;name=Web%20of%20Trust%20Beta&amp;name=AdGuard%20Extra%20Beta&amp;type=user-script"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
@@ -16682,39 +16682,6 @@ There are 836 test dog images.
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
-                                class="c1"># Export the dog_names list to csv to avoid upload huge</span>
-<span class="c1"># dog_files to Udacity Workspace IDE for model training</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span
-                                    class="k">as</span> <span
-                                    class="nn">np</span>
-<span class="n">np</span><span class="o">.</span><span
-                                    class="n">savetxt</span><span
-                                    class="p">(</span><span class="s2">&quot;data/dog_names.csv&quot;</span><span
-                                    class="p">,</span> <span
-                                    class="n">dog_names</span><span
-                                    class="p">,</span> <span
-                                    class="n">delimiter</span><span
-                                    class="o">=</span><span class="s2">&quot;,&quot;</span><span
-                                    class="p">,</span> <span
-                                    class="n">fmt</span><span class="o">=</span><span
-                                    class="s1">&#39;</span><span
-                                    class="si">%s</span><span
-                                    class="s1">&#39;</span><span
-                                    class="p">)</span>
-</pre>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="cell border-box-sizing code_cell rendered">
-            <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[3]:</div>
-                <div class="inner_cell">
-                    <div class="input_area">
-                        <div class=" highlight hl-ipython3"><pre><span></span><span
                                 class="n">dog_names</span>
 </pre>
                         </div>
@@ -16729,7 +16696,7 @@ There are 836 test dog images.
 
                     <div class="output_area">
 
-                        <div class="prompt output_prompt">Out[3]:</div>
+                        <div class="prompt output_prompt">Out[2]:</div>
 
 
                         <div class="output_text output_subarea output_execute_result">
@@ -16876,7 +16843,7 @@ There are 836 test dog images.
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[93]:</div>
+                <div class="prompt input_prompt">In&nbsp;[3]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -16887,17 +16854,7 @@ There are 836 test dog images.
                                     class="p">((</span><span class="n">test_targets</span><span
                                     class="p">,</span> <span class="n">train_targets</span><span
                                     class="p">,</span> <span class="n">valid_targets</span><span
-                                    class="p">),</span> <span
-                                    class="n">axis</span><span
-                                    class="o">=</span><span
-                                    class="mi">0</span><span class="p">)</span>
-<span class="c1"># Number of dogs per category</span>
-<span class="n">num_per_breed</span> <span class="o">=</span> <span class="n">targets</span><span
-                                    class="o">.</span><span class="n">sum</span><span
-                                    class="p">(</span><span
-                                    class="n">axis</span><span
-                                    class="o">=</span><span
-                                    class="mi">0</span><span class="p">)</span>
+                                    class="p">))</span>
 </pre>
                         </div>
 
@@ -16908,7 +16865,59 @@ There are 836 test dog images.
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[100]:</div>
+                <div class="prompt input_prompt">In&nbsp;[4]:</div>
+                <div class="inner_cell">
+                    <div class="input_area">
+                        <div class=" highlight hl-ipython3"><pre><span></span><span
+                                class="c1"># Number of dogs per category</span>
+<span class="n">num_per_breed</span> <span class="o">=</span> <span class="n">targets</span><span
+                                    class="o">.</span><span class="n">sum</span><span
+                                    class="p">(</span><span
+                                    class="n">axis</span><span
+                                    class="o">=</span><span
+                                    class="mi">0</span><span class="p">)</span>
+<span class="n">num_per_breed</span>
+</pre>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="output_wrapper">
+                <div class="output">
+
+
+                    <div class="output_area">
+
+                        <div class="prompt output_prompt">Out[4]:</div>
+
+
+                        <div class="output_text output_subarea output_execute_result">
+<pre>array([ 80.,  73.,  65.,  79.,  96.,  80.,  63.,  82.,  42.,  62.,  83.,
+        83.,  58.,  86.,  92.,  74.,  77.,  63.,  60.,  78.,  80.,  59.,
+        81.,  77.,  46.,  51.,  80.,  44.,  93.,  65.,  70.,  81.,  56.,
+        80.,  66.,  81.,  62.,  71.,  87.,  66.,  86.,  79.,  62.,  80.,
+        66.,  84.,  67.,  68.,  63.,  62.,  78.,  61.,  59.,  71.,  63.,
+        82.,  89.,  63.,  59.,  75.,  76.,  66.,  66.,  49.,  53.,  41.,
+        42.,  79.,  64.,  59.,  78.,  60.,  52.,  51.,  55.,  80.,  54.,
+        50.,  74.,  57.,  70.,  76.,  58.,  62.,  46.,  66.,  82.,  64.,
+        66.,  73.,  71.,  55.,  44.,  55.,  61.,  54.,  62.,  57.,  53.,
+        42.,  60.,  36.,  72.,  53.,  39.,  62.,  58.,  33.,  56.,  41.,
+        55.,  67.,  49.,  44.,  79.,  38.,  60.,  66.,  39.,  49.,  35.,
+        40.,  55.,  62.,  42.,  37.,  51.,  38.,  60.,  55.,  37.,  33.,
+        38.])</pre>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="cell border-box-sizing code_cell rendered">
+            <div class="input">
+                <div class="prompt input_prompt">In&nbsp;[5]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -16952,7 +16961,7 @@ Average number of dogs per category is 62.79
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[97]:</div>
+                <div class="prompt input_prompt">In&nbsp;[6]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -16967,7 +16976,7 @@ Average number of dogs per category is 62.79
                                     class="p">(</span><span
                                     class="n">figsize</span><span
                                     class="o">=</span><span
-                                    class="p">[</span><span class="mi">10</span><span
+                                    class="p">[</span><span class="mi">15</span><span
                                     class="p">,</span><span
                                     class="mi">8</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span
@@ -16981,13 +16990,8 @@ Average number of dogs per category is 62.79
                                     class="mi">133</span><span
                                     class="p">),</span> <span
                                     class="n">height</span><span
-                                    class="o">=</span><span
-                                    class="n">targets</span><span
-                                    class="o">.</span><span class="n">sum</span><span
-                                    class="p">(</span><span
-                                    class="n">axis</span><span
-                                    class="o">=</span><span
-                                    class="mi">0</span><span class="p">))</span>
+                                    class="o">=</span><span class="n">num_per_breed</span><span
+                                    class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span
                                     class="n">xlabel</span><span
                                     class="p">(</span><span class="s1">&#39;Category&#39;</span><span
@@ -17017,7 +17021,7 @@ Average number of dogs per category is 62.79
 
 
                         <div class="output_png output_subarea ">
-                            <img src="data:image/png;base64,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
+                            <img src="data:image/png;base64,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
 "
                             >
                         </div>
@@ -17312,6 +17316,17 @@ Average number of dogs per category is 62.79
 <span class="k">def</span> <span class="nf">face_detector</span><span class="p">(</span><span
                                     class="n">img_path</span><span
                                     class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function takes a path to an image as input and returns True or False </span>
+<span class="sd">    representing whether a face is detected in the image or not</span>
+
+<span class="sd">    Parameter:</span>
+<span class="sd">    img_path: the path of the image user wants to identify the possible dog </span>
+<span class="sd">    breed</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    True or False representing whether a face is detected in the image or not</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">img</span> <span class="o">=</span> <span
                                     class="n">cv2</span><span class="o">.</span><span
                                     class="n">imread</span><span
@@ -17503,7 +17518,7 @@ Average number of dogs per category is 62.79
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[10]:</div>
+                <div class="prompt input_prompt">In&nbsp;[11]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -17549,7 +17564,7 @@ Average number of dogs per category is 62.79
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[67]:</div>
+                <div class="prompt input_prompt">In&nbsp;[12]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -17561,12 +17576,12 @@ Average number of dogs per category is 62.79
 <span class="c1"># changing the name of the variable here as it would shadow the variable while</span>
 <span class="c1"># architecting the model below causing an error as the shape of the </span>
 <span class="c1"># model changes</span>
-<span class="n">ResNet50_mod</span> <span class="o">=</span> <span class="n">ResNet50</span><span
+<span class="n">resnet50_model</span> <span class="o">=</span> <span class="n">ResNet50</span><span
                                     class="p">(</span><span
                                     class="n">weights</span><span
                                     class="o">=</span><span class="s1">&#39;imagenet&#39;</span><span
                                     class="p">)</span>
-<span class="n">ResNet50_mod</span><span class="o">.</span><span class="n">summary</span><span
+<span class="n">resnet50_model</span><span class="o">.</span><span class="n">summary</span><span
                                     class="p">()</span>
 </pre>
                         </div>
@@ -17585,376 +17600,378 @@ Average number of dogs per category is 62.79
 
 
                         <div class="output_subarea output_stream output_stdout output_text">
-<pre>__________________________________________________________________________________________________
+<pre>Downloading data from https://github.com/fchollet/deep-learning-models/releases/download/v0.2/resnet50_weights_tf_dim_ordering_tf_kernels.h5
+102858752/102853048 [==============================] - 1s 0us/step
+__________________________________________________________________________________________________
 Layer (type)                    Output Shape         Param #     Connected to
 ==================================================================================================
-input_14 (InputLayer)           (None, 224, 224, 3)  0
+input_1 (InputLayer)            (None, 224, 224, 3)  0
 __________________________________________________________________________________________________
-conv1 (Conv2D)                  (None, 112, 112, 64) 9472        input_14[0][0]
+conv1 (Conv2D)                  (None, 112, 112, 64) 9472        input_1[0][0]
 __________________________________________________________________________________________________
 bn_conv1 (BatchNormalization)   (None, 112, 112, 64) 256         conv1[0][0]
 __________________________________________________________________________________________________
-activation_638 (Activation)     (None, 112, 112, 64) 0           bn_conv1[0][0]
+activation_1 (Activation)       (None, 112, 112, 64) 0           bn_conv1[0][0]
 __________________________________________________________________________________________________
-max_pooling2d_20 (MaxPooling2D) (None, 55, 55, 64)   0           activation_638[0][0]
+max_pooling2d_1 (MaxPooling2D)  (None, 55, 55, 64)   0           activation_1[0][0]
 __________________________________________________________________________________________________
-res2a_branch2a (Conv2D)         (None, 55, 55, 64)   4160        max_pooling2d_20[0][0]
+res2a_branch2a (Conv2D)         (None, 55, 55, 64)   4160        max_pooling2d_1[0][0]
 __________________________________________________________________________________________________
 bn2a_branch2a (BatchNormalizati (None, 55, 55, 64)   256         res2a_branch2a[0][0]
 __________________________________________________________________________________________________
-activation_639 (Activation)     (None, 55, 55, 64)   0           bn2a_branch2a[0][0]
+activation_2 (Activation)       (None, 55, 55, 64)   0           bn2a_branch2a[0][0]
 __________________________________________________________________________________________________
-res2a_branch2b (Conv2D)         (None, 55, 55, 64)   36928       activation_639[0][0]
+res2a_branch2b (Conv2D)         (None, 55, 55, 64)   36928       activation_2[0][0]
 __________________________________________________________________________________________________
 bn2a_branch2b (BatchNormalizati (None, 55, 55, 64)   256         res2a_branch2b[0][0]
 __________________________________________________________________________________________________
-activation_640 (Activation)     (None, 55, 55, 64)   0           bn2a_branch2b[0][0]
+activation_3 (Activation)       (None, 55, 55, 64)   0           bn2a_branch2b[0][0]
 __________________________________________________________________________________________________
-res2a_branch2c (Conv2D)         (None, 55, 55, 256)  16640       activation_640[0][0]
+res2a_branch2c (Conv2D)         (None, 55, 55, 256)  16640       activation_3[0][0]
 __________________________________________________________________________________________________
-res2a_branch1 (Conv2D)          (None, 55, 55, 256)  16640       max_pooling2d_20[0][0]
+res2a_branch1 (Conv2D)          (None, 55, 55, 256)  16640       max_pooling2d_1[0][0]
 __________________________________________________________________________________________________
 bn2a_branch2c (BatchNormalizati (None, 55, 55, 256)  1024        res2a_branch2c[0][0]
 __________________________________________________________________________________________________
 bn2a_branch1 (BatchNormalizatio (None, 55, 55, 256)  1024        res2a_branch1[0][0]
 __________________________________________________________________________________________________
-add_209 (Add)                   (None, 55, 55, 256)  0           bn2a_branch2c[0][0]
+add_1 (Add)                     (None, 55, 55, 256)  0           bn2a_branch2c[0][0]
                                                                  bn2a_branch1[0][0]
 __________________________________________________________________________________________________
-activation_641 (Activation)     (None, 55, 55, 256)  0           add_209[0][0]
+activation_4 (Activation)       (None, 55, 55, 256)  0           add_1[0][0]
 __________________________________________________________________________________________________
-res2b_branch2a (Conv2D)         (None, 55, 55, 64)   16448       activation_641[0][0]
+res2b_branch2a (Conv2D)         (None, 55, 55, 64)   16448       activation_4[0][0]
 __________________________________________________________________________________________________
 bn2b_branch2a (BatchNormalizati (None, 55, 55, 64)   256         res2b_branch2a[0][0]
 __________________________________________________________________________________________________
-activation_642 (Activation)     (None, 55, 55, 64)   0           bn2b_branch2a[0][0]
+activation_5 (Activation)       (None, 55, 55, 64)   0           bn2b_branch2a[0][0]
 __________________________________________________________________________________________________
-res2b_branch2b (Conv2D)         (None, 55, 55, 64)   36928       activation_642[0][0]
+res2b_branch2b (Conv2D)         (None, 55, 55, 64)   36928       activation_5[0][0]
 __________________________________________________________________________________________________
 bn2b_branch2b (BatchNormalizati (None, 55, 55, 64)   256         res2b_branch2b[0][0]
 __________________________________________________________________________________________________
-activation_643 (Activation)     (None, 55, 55, 64)   0           bn2b_branch2b[0][0]
+activation_6 (Activation)       (None, 55, 55, 64)   0           bn2b_branch2b[0][0]
 __________________________________________________________________________________________________
-res2b_branch2c (Conv2D)         (None, 55, 55, 256)  16640       activation_643[0][0]
+res2b_branch2c (Conv2D)         (None, 55, 55, 256)  16640       activation_6[0][0]
 __________________________________________________________________________________________________
 bn2b_branch2c (BatchNormalizati (None, 55, 55, 256)  1024        res2b_branch2c[0][0]
 __________________________________________________________________________________________________
-add_210 (Add)                   (None, 55, 55, 256)  0           bn2b_branch2c[0][0]
-                                                                 activation_641[0][0]
+add_2 (Add)                     (None, 55, 55, 256)  0           bn2b_branch2c[0][0]
+                                                                 activation_4[0][0]
 __________________________________________________________________________________________________
-activation_644 (Activation)     (None, 55, 55, 256)  0           add_210[0][0]
+activation_7 (Activation)       (None, 55, 55, 256)  0           add_2[0][0]
 __________________________________________________________________________________________________
-res2c_branch2a (Conv2D)         (None, 55, 55, 64)   16448       activation_644[0][0]
+res2c_branch2a (Conv2D)         (None, 55, 55, 64)   16448       activation_7[0][0]
 __________________________________________________________________________________________________
 bn2c_branch2a (BatchNormalizati (None, 55, 55, 64)   256         res2c_branch2a[0][0]
 __________________________________________________________________________________________________
-activation_645 (Activation)     (None, 55, 55, 64)   0           bn2c_branch2a[0][0]
+activation_8 (Activation)       (None, 55, 55, 64)   0           bn2c_branch2a[0][0]
 __________________________________________________________________________________________________
-res2c_branch2b (Conv2D)         (None, 55, 55, 64)   36928       activation_645[0][0]
+res2c_branch2b (Conv2D)         (None, 55, 55, 64)   36928       activation_8[0][0]
 __________________________________________________________________________________________________
 bn2c_branch2b (BatchNormalizati (None, 55, 55, 64)   256         res2c_branch2b[0][0]
 __________________________________________________________________________________________________
-activation_646 (Activation)     (None, 55, 55, 64)   0           bn2c_branch2b[0][0]
+activation_9 (Activation)       (None, 55, 55, 64)   0           bn2c_branch2b[0][0]
 __________________________________________________________________________________________________
-res2c_branch2c (Conv2D)         (None, 55, 55, 256)  16640       activation_646[0][0]
+res2c_branch2c (Conv2D)         (None, 55, 55, 256)  16640       activation_9[0][0]
 __________________________________________________________________________________________________
 bn2c_branch2c (BatchNormalizati (None, 55, 55, 256)  1024        res2c_branch2c[0][0]
 __________________________________________________________________________________________________
-add_211 (Add)                   (None, 55, 55, 256)  0           bn2c_branch2c[0][0]
-                                                                 activation_644[0][0]
+add_3 (Add)                     (None, 55, 55, 256)  0           bn2c_branch2c[0][0]
+                                                                 activation_7[0][0]
 __________________________________________________________________________________________________
-activation_647 (Activation)     (None, 55, 55, 256)  0           add_211[0][0]
+activation_10 (Activation)      (None, 55, 55, 256)  0           add_3[0][0]
 __________________________________________________________________________________________________
-res3a_branch2a (Conv2D)         (None, 28, 28, 128)  32896       activation_647[0][0]
+res3a_branch2a (Conv2D)         (None, 28, 28, 128)  32896       activation_10[0][0]
 __________________________________________________________________________________________________
 bn3a_branch2a (BatchNormalizati (None, 28, 28, 128)  512         res3a_branch2a[0][0]
 __________________________________________________________________________________________________
-activation_648 (Activation)     (None, 28, 28, 128)  0           bn3a_branch2a[0][0]
+activation_11 (Activation)      (None, 28, 28, 128)  0           bn3a_branch2a[0][0]
 __________________________________________________________________________________________________
-res3a_branch2b (Conv2D)         (None, 28, 28, 128)  147584      activation_648[0][0]
+res3a_branch2b (Conv2D)         (None, 28, 28, 128)  147584      activation_11[0][0]
 __________________________________________________________________________________________________
 bn3a_branch2b (BatchNormalizati (None, 28, 28, 128)  512         res3a_branch2b[0][0]
 __________________________________________________________________________________________________
-activation_649 (Activation)     (None, 28, 28, 128)  0           bn3a_branch2b[0][0]
+activation_12 (Activation)      (None, 28, 28, 128)  0           bn3a_branch2b[0][0]
 __________________________________________________________________________________________________
-res3a_branch2c (Conv2D)         (None, 28, 28, 512)  66048       activation_649[0][0]
+res3a_branch2c (Conv2D)         (None, 28, 28, 512)  66048       activation_12[0][0]
 __________________________________________________________________________________________________
-res3a_branch1 (Conv2D)          (None, 28, 28, 512)  131584      activation_647[0][0]
+res3a_branch1 (Conv2D)          (None, 28, 28, 512)  131584      activation_10[0][0]
 __________________________________________________________________________________________________
 bn3a_branch2c (BatchNormalizati (None, 28, 28, 512)  2048        res3a_branch2c[0][0]
 __________________________________________________________________________________________________
 bn3a_branch1 (BatchNormalizatio (None, 28, 28, 512)  2048        res3a_branch1[0][0]
 __________________________________________________________________________________________________
-add_212 (Add)                   (None, 28, 28, 512)  0           bn3a_branch2c[0][0]
+add_4 (Add)                     (None, 28, 28, 512)  0           bn3a_branch2c[0][0]
                                                                  bn3a_branch1[0][0]
 __________________________________________________________________________________________________
-activation_650 (Activation)     (None, 28, 28, 512)  0           add_212[0][0]
+activation_13 (Activation)      (None, 28, 28, 512)  0           add_4[0][0]
 __________________________________________________________________________________________________
-res3b_branch2a (Conv2D)         (None, 28, 28, 128)  65664       activation_650[0][0]
+res3b_branch2a (Conv2D)         (None, 28, 28, 128)  65664       activation_13[0][0]
 __________________________________________________________________________________________________
 bn3b_branch2a (BatchNormalizati (None, 28, 28, 128)  512         res3b_branch2a[0][0]
 __________________________________________________________________________________________________
-activation_651 (Activation)     (None, 28, 28, 128)  0           bn3b_branch2a[0][0]
+activation_14 (Activation)      (None, 28, 28, 128)  0           bn3b_branch2a[0][0]
 __________________________________________________________________________________________________
-res3b_branch2b (Conv2D)         (None, 28, 28, 128)  147584      activation_651[0][0]
+res3b_branch2b (Conv2D)         (None, 28, 28, 128)  147584      activation_14[0][0]
 __________________________________________________________________________________________________
 bn3b_branch2b (BatchNormalizati (None, 28, 28, 128)  512         res3b_branch2b[0][0]
 __________________________________________________________________________________________________
-activation_652 (Activation)     (None, 28, 28, 128)  0           bn3b_branch2b[0][0]
+activation_15 (Activation)      (None, 28, 28, 128)  0           bn3b_branch2b[0][0]
 __________________________________________________________________________________________________
-res3b_branch2c (Conv2D)         (None, 28, 28, 512)  66048       activation_652[0][0]
+res3b_branch2c (Conv2D)         (None, 28, 28, 512)  66048       activation_15[0][0]
 __________________________________________________________________________________________________
 bn3b_branch2c (BatchNormalizati (None, 28, 28, 512)  2048        res3b_branch2c[0][0]
 __________________________________________________________________________________________________
-add_213 (Add)                   (None, 28, 28, 512)  0           bn3b_branch2c[0][0]
-                                                                 activation_650[0][0]
+add_5 (Add)                     (None, 28, 28, 512)  0           bn3b_branch2c[0][0]
+                                                                 activation_13[0][0]
 __________________________________________________________________________________________________
-activation_653 (Activation)     (None, 28, 28, 512)  0           add_213[0][0]
+activation_16 (Activation)      (None, 28, 28, 512)  0           add_5[0][0]
 __________________________________________________________________________________________________
-res3c_branch2a (Conv2D)         (None, 28, 28, 128)  65664       activation_653[0][0]
+res3c_branch2a (Conv2D)         (None, 28, 28, 128)  65664       activation_16[0][0]
 __________________________________________________________________________________________________
 bn3c_branch2a (BatchNormalizati (None, 28, 28, 128)  512         res3c_branch2a[0][0]
 __________________________________________________________________________________________________
-activation_654 (Activation)     (None, 28, 28, 128)  0           bn3c_branch2a[0][0]
+activation_17 (Activation)      (None, 28, 28, 128)  0           bn3c_branch2a[0][0]
 __________________________________________________________________________________________________
-res3c_branch2b (Conv2D)         (None, 28, 28, 128)  147584      activation_654[0][0]
+res3c_branch2b (Conv2D)         (None, 28, 28, 128)  147584      activation_17[0][0]
 __________________________________________________________________________________________________
 bn3c_branch2b (BatchNormalizati (None, 28, 28, 128)  512         res3c_branch2b[0][0]
 __________________________________________________________________________________________________
-activation_655 (Activation)     (None, 28, 28, 128)  0           bn3c_branch2b[0][0]
+activation_18 (Activation)      (None, 28, 28, 128)  0           bn3c_branch2b[0][0]
 __________________________________________________________________________________________________
-res3c_branch2c (Conv2D)         (None, 28, 28, 512)  66048       activation_655[0][0]
+res3c_branch2c (Conv2D)         (None, 28, 28, 512)  66048       activation_18[0][0]
 __________________________________________________________________________________________________
 bn3c_branch2c (BatchNormalizati (None, 28, 28, 512)  2048        res3c_branch2c[0][0]
 __________________________________________________________________________________________________
-add_214 (Add)                   (None, 28, 28, 512)  0           bn3c_branch2c[0][0]
-                                                                 activation_653[0][0]
+add_6 (Add)                     (None, 28, 28, 512)  0           bn3c_branch2c[0][0]
+                                                                 activation_16[0][0]
 __________________________________________________________________________________________________
-activation_656 (Activation)     (None, 28, 28, 512)  0           add_214[0][0]
+activation_19 (Activation)      (None, 28, 28, 512)  0           add_6[0][0]
 __________________________________________________________________________________________________
-res3d_branch2a (Conv2D)         (None, 28, 28, 128)  65664       activation_656[0][0]
+res3d_branch2a (Conv2D)         (None, 28, 28, 128)  65664       activation_19[0][0]
 __________________________________________________________________________________________________
 bn3d_branch2a (BatchNormalizati (None, 28, 28, 128)  512         res3d_branch2a[0][0]
 __________________________________________________________________________________________________
-activation_657 (Activation)     (None, 28, 28, 128)  0           bn3d_branch2a[0][0]
+activation_20 (Activation)      (None, 28, 28, 128)  0           bn3d_branch2a[0][0]
 __________________________________________________________________________________________________
-res3d_branch2b (Conv2D)         (None, 28, 28, 128)  147584      activation_657[0][0]
+res3d_branch2b (Conv2D)         (None, 28, 28, 128)  147584      activation_20[0][0]
 __________________________________________________________________________________________________
 bn3d_branch2b (BatchNormalizati (None, 28, 28, 128)  512         res3d_branch2b[0][0]
 __________________________________________________________________________________________________
-activation_658 (Activation)     (None, 28, 28, 128)  0           bn3d_branch2b[0][0]
+activation_21 (Activation)      (None, 28, 28, 128)  0           bn3d_branch2b[0][0]
 __________________________________________________________________________________________________
-res3d_branch2c (Conv2D)         (None, 28, 28, 512)  66048       activation_658[0][0]
+res3d_branch2c (Conv2D)         (None, 28, 28, 512)  66048       activation_21[0][0]
 __________________________________________________________________________________________________
 bn3d_branch2c (BatchNormalizati (None, 28, 28, 512)  2048        res3d_branch2c[0][0]
 __________________________________________________________________________________________________
-add_215 (Add)                   (None, 28, 28, 512)  0           bn3d_branch2c[0][0]
-                                                                 activation_656[0][0]
+add_7 (Add)                     (None, 28, 28, 512)  0           bn3d_branch2c[0][0]
+                                                                 activation_19[0][0]
 __________________________________________________________________________________________________
-activation_659 (Activation)     (None, 28, 28, 512)  0           add_215[0][0]
+activation_22 (Activation)      (None, 28, 28, 512)  0           add_7[0][0]
 __________________________________________________________________________________________________
-res4a_branch2a (Conv2D)         (None, 14, 14, 256)  131328      activation_659[0][0]
+res4a_branch2a (Conv2D)         (None, 14, 14, 256)  131328      activation_22[0][0]
 __________________________________________________________________________________________________
 bn4a_branch2a (BatchNormalizati (None, 14, 14, 256)  1024        res4a_branch2a[0][0]
 __________________________________________________________________________________________________
-activation_660 (Activation)     (None, 14, 14, 256)  0           bn4a_branch2a[0][0]
+activation_23 (Activation)      (None, 14, 14, 256)  0           bn4a_branch2a[0][0]
 __________________________________________________________________________________________________
-res4a_branch2b (Conv2D)         (None, 14, 14, 256)  590080      activation_660[0][0]
+res4a_branch2b (Conv2D)         (None, 14, 14, 256)  590080      activation_23[0][0]
 __________________________________________________________________________________________________
 bn4a_branch2b (BatchNormalizati (None, 14, 14, 256)  1024        res4a_branch2b[0][0]
 __________________________________________________________________________________________________
-activation_661 (Activation)     (None, 14, 14, 256)  0           bn4a_branch2b[0][0]
+activation_24 (Activation)      (None, 14, 14, 256)  0           bn4a_branch2b[0][0]
 __________________________________________________________________________________________________
-res4a_branch2c (Conv2D)         (None, 14, 14, 1024) 263168      activation_661[0][0]
+res4a_branch2c (Conv2D)         (None, 14, 14, 1024) 263168      activation_24[0][0]
 __________________________________________________________________________________________________
-res4a_branch1 (Conv2D)          (None, 14, 14, 1024) 525312      activation_659[0][0]
+res4a_branch1 (Conv2D)          (None, 14, 14, 1024) 525312      activation_22[0][0]
 __________________________________________________________________________________________________
 bn4a_branch2c (BatchNormalizati (None, 14, 14, 1024) 4096        res4a_branch2c[0][0]
 __________________________________________________________________________________________________
 bn4a_branch1 (BatchNormalizatio (None, 14, 14, 1024) 4096        res4a_branch1[0][0]
 __________________________________________________________________________________________________
-add_216 (Add)                   (None, 14, 14, 1024) 0           bn4a_branch2c[0][0]
+add_8 (Add)                     (None, 14, 14, 1024) 0           bn4a_branch2c[0][0]
                                                                  bn4a_branch1[0][0]
 __________________________________________________________________________________________________
-activation_662 (Activation)     (None, 14, 14, 1024) 0           add_216[0][0]
+activation_25 (Activation)      (None, 14, 14, 1024) 0           add_8[0][0]
 __________________________________________________________________________________________________
-res4b_branch2a (Conv2D)         (None, 14, 14, 256)  262400      activation_662[0][0]
+res4b_branch2a (Conv2D)         (None, 14, 14, 256)  262400      activation_25[0][0]
 __________________________________________________________________________________________________
 bn4b_branch2a (BatchNormalizati (None, 14, 14, 256)  1024        res4b_branch2a[0][0]
 __________________________________________________________________________________________________
-activation_663 (Activation)     (None, 14, 14, 256)  0           bn4b_branch2a[0][0]
+activation_26 (Activation)      (None, 14, 14, 256)  0           bn4b_branch2a[0][0]
 __________________________________________________________________________________________________
-res4b_branch2b (Conv2D)         (None, 14, 14, 256)  590080      activation_663[0][0]
+res4b_branch2b (Conv2D)         (None, 14, 14, 256)  590080      activation_26[0][0]
 __________________________________________________________________________________________________
 bn4b_branch2b (BatchNormalizati (None, 14, 14, 256)  1024        res4b_branch2b[0][0]
 __________________________________________________________________________________________________
-activation_664 (Activation)     (None, 14, 14, 256)  0           bn4b_branch2b[0][0]
+activation_27 (Activation)      (None, 14, 14, 256)  0           bn4b_branch2b[0][0]
 __________________________________________________________________________________________________
-res4b_branch2c (Conv2D)         (None, 14, 14, 1024) 263168      activation_664[0][0]
+res4b_branch2c (Conv2D)         (None, 14, 14, 1024) 263168      activation_27[0][0]
 __________________________________________________________________________________________________
 bn4b_branch2c (BatchNormalizati (None, 14, 14, 1024) 4096        res4b_branch2c[0][0]
 __________________________________________________________________________________________________
-add_217 (Add)                   (None, 14, 14, 1024) 0           bn4b_branch2c[0][0]
-                                                                 activation_662[0][0]
+add_9 (Add)                     (None, 14, 14, 1024) 0           bn4b_branch2c[0][0]
+                                                                 activation_25[0][0]
 __________________________________________________________________________________________________
-activation_665 (Activation)     (None, 14, 14, 1024) 0           add_217[0][0]
+activation_28 (Activation)      (None, 14, 14, 1024) 0           add_9[0][0]
 __________________________________________________________________________________________________
-res4c_branch2a (Conv2D)         (None, 14, 14, 256)  262400      activation_665[0][0]
+res4c_branch2a (Conv2D)         (None, 14, 14, 256)  262400      activation_28[0][0]
 __________________________________________________________________________________________________
 bn4c_branch2a (BatchNormalizati (None, 14, 14, 256)  1024        res4c_branch2a[0][0]
 __________________________________________________________________________________________________
-activation_666 (Activation)     (None, 14, 14, 256)  0           bn4c_branch2a[0][0]
+activation_29 (Activation)      (None, 14, 14, 256)  0           bn4c_branch2a[0][0]
 __________________________________________________________________________________________________
-res4c_branch2b (Conv2D)         (None, 14, 14, 256)  590080      activation_666[0][0]
+res4c_branch2b (Conv2D)         (None, 14, 14, 256)  590080      activation_29[0][0]
 __________________________________________________________________________________________________
 bn4c_branch2b (BatchNormalizati (None, 14, 14, 256)  1024        res4c_branch2b[0][0]
 __________________________________________________________________________________________________
-activation_667 (Activation)     (None, 14, 14, 256)  0           bn4c_branch2b[0][0]
+activation_30 (Activation)      (None, 14, 14, 256)  0           bn4c_branch2b[0][0]
 __________________________________________________________________________________________________
-res4c_branch2c (Conv2D)         (None, 14, 14, 1024) 263168      activation_667[0][0]
+res4c_branch2c (Conv2D)         (None, 14, 14, 1024) 263168      activation_30[0][0]
 __________________________________________________________________________________________________
 bn4c_branch2c (BatchNormalizati (None, 14, 14, 1024) 4096        res4c_branch2c[0][0]
 __________________________________________________________________________________________________
-add_218 (Add)                   (None, 14, 14, 1024) 0           bn4c_branch2c[0][0]
-                                                                 activation_665[0][0]
+add_10 (Add)                    (None, 14, 14, 1024) 0           bn4c_branch2c[0][0]
+                                                                 activation_28[0][0]
 __________________________________________________________________________________________________
-activation_668 (Activation)     (None, 14, 14, 1024) 0           add_218[0][0]
+activation_31 (Activation)      (None, 14, 14, 1024) 0           add_10[0][0]
 __________________________________________________________________________________________________
-res4d_branch2a (Conv2D)         (None, 14, 14, 256)  262400      activation_668[0][0]
+res4d_branch2a (Conv2D)         (None, 14, 14, 256)  262400      activation_31[0][0]
 __________________________________________________________________________________________________
 bn4d_branch2a (BatchNormalizati (None, 14, 14, 256)  1024        res4d_branch2a[0][0]
 __________________________________________________________________________________________________
-activation_669 (Activation)     (None, 14, 14, 256)  0           bn4d_branch2a[0][0]
+activation_32 (Activation)      (None, 14, 14, 256)  0           bn4d_branch2a[0][0]
 __________________________________________________________________________________________________
-res4d_branch2b (Conv2D)         (None, 14, 14, 256)  590080      activation_669[0][0]
+res4d_branch2b (Conv2D)         (None, 14, 14, 256)  590080      activation_32[0][0]
 __________________________________________________________________________________________________
 bn4d_branch2b (BatchNormalizati (None, 14, 14, 256)  1024        res4d_branch2b[0][0]
 __________________________________________________________________________________________________
-activation_670 (Activation)     (None, 14, 14, 256)  0           bn4d_branch2b[0][0]
+activation_33 (Activation)      (None, 14, 14, 256)  0           bn4d_branch2b[0][0]
 __________________________________________________________________________________________________
-res4d_branch2c (Conv2D)         (None, 14, 14, 1024) 263168      activation_670[0][0]
+res4d_branch2c (Conv2D)         (None, 14, 14, 1024) 263168      activation_33[0][0]
 __________________________________________________________________________________________________
 bn4d_branch2c (BatchNormalizati (None, 14, 14, 1024) 4096        res4d_branch2c[0][0]
 __________________________________________________________________________________________________
-add_219 (Add)                   (None, 14, 14, 1024) 0           bn4d_branch2c[0][0]
-                                                                 activation_668[0][0]
+add_11 (Add)                    (None, 14, 14, 1024) 0           bn4d_branch2c[0][0]
+                                                                 activation_31[0][0]
 __________________________________________________________________________________________________
-activation_671 (Activation)     (None, 14, 14, 1024) 0           add_219[0][0]
+activation_34 (Activation)      (None, 14, 14, 1024) 0           add_11[0][0]
 __________________________________________________________________________________________________
-res4e_branch2a (Conv2D)         (None, 14, 14, 256)  262400      activation_671[0][0]
+res4e_branch2a (Conv2D)         (None, 14, 14, 256)  262400      activation_34[0][0]
 __________________________________________________________________________________________________
 bn4e_branch2a (BatchNormalizati (None, 14, 14, 256)  1024        res4e_branch2a[0][0]
 __________________________________________________________________________________________________
-activation_672 (Activation)     (None, 14, 14, 256)  0           bn4e_branch2a[0][0]
+activation_35 (Activation)      (None, 14, 14, 256)  0           bn4e_branch2a[0][0]
 __________________________________________________________________________________________________
-res4e_branch2b (Conv2D)         (None, 14, 14, 256)  590080      activation_672[0][0]
+res4e_branch2b (Conv2D)         (None, 14, 14, 256)  590080      activation_35[0][0]
 __________________________________________________________________________________________________
 bn4e_branch2b (BatchNormalizati (None, 14, 14, 256)  1024        res4e_branch2b[0][0]
 __________________________________________________________________________________________________
-activation_673 (Activation)     (None, 14, 14, 256)  0           bn4e_branch2b[0][0]
+activation_36 (Activation)      (None, 14, 14, 256)  0           bn4e_branch2b[0][0]
 __________________________________________________________________________________________________
-res4e_branch2c (Conv2D)         (None, 14, 14, 1024) 263168      activation_673[0][0]
+res4e_branch2c (Conv2D)         (None, 14, 14, 1024) 263168      activation_36[0][0]
 __________________________________________________________________________________________________
 bn4e_branch2c (BatchNormalizati (None, 14, 14, 1024) 4096        res4e_branch2c[0][0]
 __________________________________________________________________________________________________
-add_220 (Add)                   (None, 14, 14, 1024) 0           bn4e_branch2c[0][0]
-                                                                 activation_671[0][0]
+add_12 (Add)                    (None, 14, 14, 1024) 0           bn4e_branch2c[0][0]
+                                                                 activation_34[0][0]
 __________________________________________________________________________________________________
-activation_674 (Activation)     (None, 14, 14, 1024) 0           add_220[0][0]
+activation_37 (Activation)      (None, 14, 14, 1024) 0           add_12[0][0]
 __________________________________________________________________________________________________
-res4f_branch2a (Conv2D)         (None, 14, 14, 256)  262400      activation_674[0][0]
+res4f_branch2a (Conv2D)         (None, 14, 14, 256)  262400      activation_37[0][0]
 __________________________________________________________________________________________________
 bn4f_branch2a (BatchNormalizati (None, 14, 14, 256)  1024        res4f_branch2a[0][0]
 __________________________________________________________________________________________________
-activation_675 (Activation)     (None, 14, 14, 256)  0           bn4f_branch2a[0][0]
+activation_38 (Activation)      (None, 14, 14, 256)  0           bn4f_branch2a[0][0]
 __________________________________________________________________________________________________
-res4f_branch2b (Conv2D)         (None, 14, 14, 256)  590080      activation_675[0][0]
+res4f_branch2b (Conv2D)         (None, 14, 14, 256)  590080      activation_38[0][0]
 __________________________________________________________________________________________________
 bn4f_branch2b (BatchNormalizati (None, 14, 14, 256)  1024        res4f_branch2b[0][0]
 __________________________________________________________________________________________________
-activation_676 (Activation)     (None, 14, 14, 256)  0           bn4f_branch2b[0][0]
+activation_39 (Activation)      (None, 14, 14, 256)  0           bn4f_branch2b[0][0]
 __________________________________________________________________________________________________
-res4f_branch2c (Conv2D)         (None, 14, 14, 1024) 263168      activation_676[0][0]
+res4f_branch2c (Conv2D)         (None, 14, 14, 1024) 263168      activation_39[0][0]
 __________________________________________________________________________________________________
 bn4f_branch2c (BatchNormalizati (None, 14, 14, 1024) 4096        res4f_branch2c[0][0]
 __________________________________________________________________________________________________
-add_221 (Add)                   (None, 14, 14, 1024) 0           bn4f_branch2c[0][0]
-                                                                 activation_674[0][0]
+add_13 (Add)                    (None, 14, 14, 1024) 0           bn4f_branch2c[0][0]
+                                                                 activation_37[0][0]
 __________________________________________________________________________________________________
-activation_677 (Activation)     (None, 14, 14, 1024) 0           add_221[0][0]
+activation_40 (Activation)      (None, 14, 14, 1024) 0           add_13[0][0]
 __________________________________________________________________________________________________
-res5a_branch2a (Conv2D)         (None, 7, 7, 512)    524800      activation_677[0][0]
+res5a_branch2a (Conv2D)         (None, 7, 7, 512)    524800      activation_40[0][0]
 __________________________________________________________________________________________________
 bn5a_branch2a (BatchNormalizati (None, 7, 7, 512)    2048        res5a_branch2a[0][0]
 __________________________________________________________________________________________________
-activation_678 (Activation)     (None, 7, 7, 512)    0           bn5a_branch2a[0][0]
+activation_41 (Activation)      (None, 7, 7, 512)    0           bn5a_branch2a[0][0]
 __________________________________________________________________________________________________
-res5a_branch2b (Conv2D)         (None, 7, 7, 512)    2359808     activation_678[0][0]
+res5a_branch2b (Conv2D)         (None, 7, 7, 512)    2359808     activation_41[0][0]
 __________________________________________________________________________________________________
 bn5a_branch2b (BatchNormalizati (None, 7, 7, 512)    2048        res5a_branch2b[0][0]
 __________________________________________________________________________________________________
-activation_679 (Activation)     (None, 7, 7, 512)    0           bn5a_branch2b[0][0]
+activation_42 (Activation)      (None, 7, 7, 512)    0           bn5a_branch2b[0][0]
 __________________________________________________________________________________________________
-res5a_branch2c (Conv2D)         (None, 7, 7, 2048)   1050624     activation_679[0][0]
+res5a_branch2c (Conv2D)         (None, 7, 7, 2048)   1050624     activation_42[0][0]
 __________________________________________________________________________________________________
-res5a_branch1 (Conv2D)          (None, 7, 7, 2048)   2099200     activation_677[0][0]
+res5a_branch1 (Conv2D)          (None, 7, 7, 2048)   2099200     activation_40[0][0]
 __________________________________________________________________________________________________
 bn5a_branch2c (BatchNormalizati (None, 7, 7, 2048)   8192        res5a_branch2c[0][0]
 __________________________________________________________________________________________________
 bn5a_branch1 (BatchNormalizatio (None, 7, 7, 2048)   8192        res5a_branch1[0][0]
 __________________________________________________________________________________________________
-add_222 (Add)                   (None, 7, 7, 2048)   0           bn5a_branch2c[0][0]
+add_14 (Add)                    (None, 7, 7, 2048)   0           bn5a_branch2c[0][0]
                                                                  bn5a_branch1[0][0]
 __________________________________________________________________________________________________
-activation_680 (Activation)     (None, 7, 7, 2048)   0           add_222[0][0]
+activation_43 (Activation)      (None, 7, 7, 2048)   0           add_14[0][0]
 __________________________________________________________________________________________________
-res5b_branch2a (Conv2D)         (None, 7, 7, 512)    1049088     activation_680[0][0]
+res5b_branch2a (Conv2D)         (None, 7, 7, 512)    1049088     activation_43[0][0]
 __________________________________________________________________________________________________
 bn5b_branch2a (BatchNormalizati (None, 7, 7, 512)    2048        res5b_branch2a[0][0]
 __________________________________________________________________________________________________
-activation_681 (Activation)     (None, 7, 7, 512)    0           bn5b_branch2a[0][0]
+activation_44 (Activation)      (None, 7, 7, 512)    0           bn5b_branch2a[0][0]
 __________________________________________________________________________________________________
-res5b_branch2b (Conv2D)         (None, 7, 7, 512)    2359808     activation_681[0][0]
+res5b_branch2b (Conv2D)         (None, 7, 7, 512)    2359808     activation_44[0][0]
 __________________________________________________________________________________________________
 bn5b_branch2b (BatchNormalizati (None, 7, 7, 512)    2048        res5b_branch2b[0][0]
 __________________________________________________________________________________________________
-activation_682 (Activation)     (None, 7, 7, 512)    0           bn5b_branch2b[0][0]
+activation_45 (Activation)      (None, 7, 7, 512)    0           bn5b_branch2b[0][0]
 __________________________________________________________________________________________________
-res5b_branch2c (Conv2D)         (None, 7, 7, 2048)   1050624     activation_682[0][0]
+res5b_branch2c (Conv2D)         (None, 7, 7, 2048)   1050624     activation_45[0][0]
 __________________________________________________________________________________________________
 bn5b_branch2c (BatchNormalizati (None, 7, 7, 2048)   8192        res5b_branch2c[0][0]
 __________________________________________________________________________________________________
-add_223 (Add)                   (None, 7, 7, 2048)   0           bn5b_branch2c[0][0]
-                                                                 activation_680[0][0]
+add_15 (Add)                    (None, 7, 7, 2048)   0           bn5b_branch2c[0][0]
+                                                                 activation_43[0][0]
 __________________________________________________________________________________________________
-activation_683 (Activation)     (None, 7, 7, 2048)   0           add_223[0][0]
+activation_46 (Activation)      (None, 7, 7, 2048)   0           add_15[0][0]
 __________________________________________________________________________________________________
-res5c_branch2a (Conv2D)         (None, 7, 7, 512)    1049088     activation_683[0][0]
+res5c_branch2a (Conv2D)         (None, 7, 7, 512)    1049088     activation_46[0][0]
 __________________________________________________________________________________________________
 bn5c_branch2a (BatchNormalizati (None, 7, 7, 512)    2048        res5c_branch2a[0][0]
 __________________________________________________________________________________________________
-activation_684 (Activation)     (None, 7, 7, 512)    0           bn5c_branch2a[0][0]
+activation_47 (Activation)      (None, 7, 7, 512)    0           bn5c_branch2a[0][0]
 __________________________________________________________________________________________________
-res5c_branch2b (Conv2D)         (None, 7, 7, 512)    2359808     activation_684[0][0]
+res5c_branch2b (Conv2D)         (None, 7, 7, 512)    2359808     activation_47[0][0]
 __________________________________________________________________________________________________
 bn5c_branch2b (BatchNormalizati (None, 7, 7, 512)    2048        res5c_branch2b[0][0]
 __________________________________________________________________________________________________
-activation_685 (Activation)     (None, 7, 7, 512)    0           bn5c_branch2b[0][0]
+activation_48 (Activation)      (None, 7, 7, 512)    0           bn5c_branch2b[0][0]
 __________________________________________________________________________________________________
-res5c_branch2c (Conv2D)         (None, 7, 7, 2048)   1050624     activation_685[0][0]
+res5c_branch2c (Conv2D)         (None, 7, 7, 2048)   1050624     activation_48[0][0]
 __________________________________________________________________________________________________
 bn5c_branch2c (BatchNormalizati (None, 7, 7, 2048)   8192        res5c_branch2c[0][0]
 __________________________________________________________________________________________________
-add_224 (Add)                   (None, 7, 7, 2048)   0           bn5c_branch2c[0][0]
-                                                                 activation_683[0][0]
+add_16 (Add)                    (None, 7, 7, 2048)   0           bn5c_branch2c[0][0]
+                                                                 activation_46[0][0]
 __________________________________________________________________________________________________
-activation_686 (Activation)     (None, 7, 7, 2048)   0           add_224[0][0]
+activation_49 (Activation)      (None, 7, 7, 2048)   0           add_16[0][0]
 __________________________________________________________________________________________________
-avg_pool (AveragePooling2D)     (None, 1, 1, 2048)   0           activation_686[0][0]
+avg_pool (AveragePooling2D)     (None, 1, 1, 2048)   0           activation_49[0][0]
 __________________________________________________________________________________________________
-flatten_2 (Flatten)             (None, 2048)         0           avg_pool[0][0]
+flatten_1 (Flatten)             (None, 2048)         0           avg_pool[0][0]
 __________________________________________________________________________________________________
-fc1000 (Dense)                  (None, 1000)         2049000     flatten_2[0][0]
+fc1000 (Dense)                  (None, 1000)         2049000     flatten_1[0][0]
 ==================================================================================================
 Total params: 25,636,712
 Trainable params: 25,583,592
@@ -18030,6 +18047,16 @@ ________________________________________________________________________________
                                     class="p">(</span><span
                                     class="n">img_path</span><span
                                     class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function takes a string-valued file path to a color image as input and </span>
+<span class="sd">    returns a 4D tensor suitable for supplying to a Keras CNN.</span>
+
+<span class="sd">    Parameter:</span>
+<span class="sd">    img_path: the path of the dog breeds project dataset</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    a 4D tensor with shape (1,224,224,3) suitable for supplying to a Keras CNN</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># loads RGB image as PIL.Image.Image type</span>
     <span class="n">img</span> <span class="o">=</span> <span
                                     class="n">image</span><span
@@ -18050,7 +18077,8 @@ ________________________________________________________________________________
                                     class="o">.</span><span class="n">img_to_array</span><span
                                     class="p">(</span><span class="n">img</span><span
                                     class="p">)</span>
-    <span class="c1"># convert 3D tensor to 4D tensor with shape (1, 224, 224, 3) and return 4D tensor</span>
+    <span class="c1"># convert 3D tensor to 4D tensor with shape (1, 224, 224, 3) and return </span>
+    <span class="c1"># 4D tensor</span>
     <span class="k">return</span> <span class="n">np</span><span
                                     class="o">.</span><span class="n">expand_dims</span><span
                                     class="p">(</span><span
@@ -18064,13 +18092,23 @@ ________________________________________________________________________________
                                     class="p">(</span><span
                                     class="n">img_paths</span><span
                                     class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function takes a numpy array of string-valued image paths as input </span>
+<span class="sd">    and returns a 4D tensor with shape</span>
+
+<span class="sd">    Parameter:</span>
+<span class="sd">    img_paths: a numpy array of string-valued image paths</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    a 4D tensor with shape (nb_samples,224,224,3)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">list_of_tensors</span> <span class="o">=</span> <span
                                     class="p">[</span><span class="n">path_to_tensor</span><span
                                     class="p">(</span><span
                                     class="n">img_path</span><span
-                                    class="p">)</span> <span
-                                    class="k">for</span> <span class="n">img_path</span> <span
-                                    class="ow">in</span> <span
+                                    class="p">)</span>
+                       <span class="k">for</span> <span
+                                    class="n">img_path</span> <span class="ow">in</span> <span
                                     class="n">tqdm</span><span
                                     class="p">(</span><span
                                     class="n">img_paths</span><span
@@ -18142,6 +18180,16 @@ ________________________________________________________________________________
                                     class="p">(</span><span
                                     class="n">img_path</span><span
                                     class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function takes a string-valued file path to a color image as input and </span>
+<span class="sd">    returns prediction vector for image located at img_path</span>
+
+<span class="sd">    Parameter:</span>
+<span class="sd">    img_path: the path of the dog breeds project dataset</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    prediction vector for image located at img_path</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># returns prediction vector for image located at img_path</span>
     <span class="n">img</span> <span class="o">=</span> <span class="n">preprocess_input</span><span
                                     class="p">(</span><span class="n">path_to_tensor</span><span
@@ -18151,7 +18199,7 @@ ________________________________________________________________________________
     <span class="k">return</span> <span class="n">np</span><span
                                     class="o">.</span><span
                                     class="n">argmax</span><span
-                                    class="p">(</span><span class="n">ResNet50_mod</span><span
+                                    class="p">(</span><span class="n">resnet50_model</span><span
                                     class="o">.</span><span
                                     class="n">predict</span><span
                                     class="p">(</span><span class="n">img</span><span
@@ -18197,11 +18245,20 @@ ________________________________________________________________________________
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
-                                class="c1">### returns &quot;True&quot; if a dog is detected in the image stored at img_path</span>
-<span class="k">def</span> <span class="nf">dog_detector</span><span
-                                    class="p">(</span><span
-                                    class="n">img_path</span><span
-                                    class="p">):</span>
+                                class="k">def</span> <span class="nf">dog_detector</span><span
+                                class="p">(</span><span
+                                class="n">img_path</span><span
+                                class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function takes a path to an image as input and returns True or False </span>
+<span class="sd">    representing whether a dog is detected in the image or not</span>
+
+<span class="sd">    Parameter:</span>
+<span class="sd">    img_path: the path of the image user wants to identify</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    True or False representing whether a dog is detected in the image or not</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">prediction</span> <span class="o">=</span> <span class="n">ResNet50_predict_labels</span><span
                                     class="p">(</span><span
                                     class="n">img_path</span><span
@@ -18255,7 +18312,7 @@ ________________________________________________________________________________
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[17]:</div>
+                <div class="prompt input_prompt">In&nbsp;[16]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -18441,7 +18498,7 @@ ________________________________________________________________________________
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[18]:</div>
+                <div class="prompt input_prompt">In&nbsp;[17]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -18498,9 +18555,9 @@ ________________________________________________________________________________
 
 
                         <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|██████████| 6680/6680 [01:14&lt;00:00, 89.23it/s]
-100%|██████████| 835/835 [00:08&lt;00:00, 99.03it/s]
-100%|██████████| 836/836 [00:08&lt;00:00, 99.85it/s]
+<pre>100%|██████████| 6680/6680 [01:10&lt;00:00, 94.38it/s]
+100%|██████████| 835/835 [00:07&lt;00:00, 106.81it/s]
+100%|██████████| 836/836 [00:07&lt;00:00, 107.68it/s]
 </pre>
                         </div>
                     </div>
@@ -18551,7 +18608,7 @@ ________________________________________________________________________________
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[20]:</div>
+                <div class="prompt input_prompt">In&nbsp;[18]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -18663,21 +18720,21 @@ ________________________________________________________________________________
 <pre>_________________________________________________________________
 Layer (type)                 Output Shape              Param #
 =================================================================
-conv2d_4 (Conv2D)            (None, 223, 223, 16)      208
+conv2d_1 (Conv2D)            (None, 223, 223, 16)      208
 _________________________________________________________________
-max_pooling2d_5 (MaxPooling2 (None, 111, 111, 16)      0
+max_pooling2d_2 (MaxPooling2 (None, 111, 111, 16)      0
 _________________________________________________________________
-conv2d_5 (Conv2D)            (None, 110, 110, 32)      2080
+conv2d_2 (Conv2D)            (None, 110, 110, 32)      2080
 _________________________________________________________________
-max_pooling2d_6 (MaxPooling2 (None, 55, 55, 32)        0
+max_pooling2d_3 (MaxPooling2 (None, 55, 55, 32)        0
 _________________________________________________________________
-conv2d_6 (Conv2D)            (None, 54, 54, 64)        8256
+conv2d_3 (Conv2D)            (None, 54, 54, 64)        8256
 _________________________________________________________________
-max_pooling2d_7 (MaxPooling2 (None, 27, 27, 64)        0
+max_pooling2d_4 (MaxPooling2 (None, 27, 27, 64)        0
 _________________________________________________________________
-global_average_pooling2d_2 ( (None, 64)                0
+global_average_pooling2d_1 ( (None, 64)                0
 _________________________________________________________________
-dense_2 (Dense)              (None, 133)               8645
+dense_1 (Dense)              (None, 133)               8645
 =================================================================
 Total params: 19,189
 Trainable params: 19,189
@@ -18704,7 +18761,7 @@ _________________________________________________________________
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[21]:</div>
+                <div class="prompt input_prompt">In&nbsp;[19]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -18750,7 +18807,7 @@ _________________________________________________________________
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[22]:</div>
+                <div class="prompt input_prompt">In&nbsp;[20]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -18815,76 +18872,76 @@ _________________________________________________________________
                         <div class="output_subarea output_stream output_stdout output_text">
 <pre>Train on 6680 samples, validate on 835 samples
 Epoch 1/20
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.8819 - acc: 0.0089Epoch 00001: val_loss improved from inf to 4.86550, saving model to saved_models/weights.best.from_scratch.hdf5
-6680/6680 [==============================] - 21s 3ms/step - loss: 4.8818 - acc: 0.0088 - val_loss: 4.8655 - val_acc: 0.0084
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.8814 - acc: 0.0098Epoch 00001: val_loss improved from inf to 4.86014, saving model to saved_models/weights.best.from_scratch.hdf5
+6680/6680 [==============================] - 21s 3ms/step - loss: 4.8815 - acc: 0.0097 - val_loss: 4.8601 - val_acc: 0.0168
 Epoch 2/20
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.8601 - acc: 0.0125Epoch 00002: val_loss improved from 4.86550 to 4.84938, saving model to saved_models/weights.best.from_scratch.hdf5
-6680/6680 [==============================] - 20s 3ms/step - loss: 4.8599 - acc: 0.0124 - val_loss: 4.8494 - val_acc: 0.0120
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.8340 - acc: 0.0152Epoch 00002: val_loss improved from 4.86014 to 4.82108, saving model to saved_models/weights.best.from_scratch.hdf5
+6680/6680 [==============================] - 20s 3ms/step - loss: 4.8335 - acc: 0.0151 - val_loss: 4.8211 - val_acc: 0.0204
 Epoch 3/20
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.8220 - acc: 0.0168Epoch 00003: val_loss improved from 4.84938 to 4.80860, saving model to saved_models/weights.best.from_scratch.hdf5
-6680/6680 [==============================] - 20s 3ms/step - loss: 4.8221 - acc: 0.0168 - val_loss: 4.8086 - val_acc: 0.0156
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.7947 - acc: 0.0206Epoch 00003: val_loss improved from 4.82108 to 4.79726, saving model to saved_models/weights.best.from_scratch.hdf5
+6680/6680 [==============================] - 20s 3ms/step - loss: 4.7946 - acc: 0.0205 - val_loss: 4.7973 - val_acc: 0.0144
 Epoch 4/20
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.7772 - acc: 0.0191Epoch 00004: val_loss improved from 4.80860 to 4.78129, saving model to saved_models/weights.best.from_scratch.hdf5
-6680/6680 [==============================] - 20s 3ms/step - loss: 4.7771 - acc: 0.0190 - val_loss: 4.7813 - val_acc: 0.0120
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.7667 - acc: 0.0194Epoch 00004: val_loss improved from 4.79726 to 4.77388, saving model to saved_models/weights.best.from_scratch.hdf5
+6680/6680 [==============================] - 20s 3ms/step - loss: 4.7664 - acc: 0.0195 - val_loss: 4.7739 - val_acc: 0.0192
 Epoch 5/20
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.7507 - acc: 0.0203Epoch 00005: val_loss did not improve
-6680/6680 [==============================] - 20s 3ms/step - loss: 4.7501 - acc: 0.0205 - val_loss: 4.7956 - val_acc: 0.0216
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.7465 - acc: 0.0213Epoch 00005: val_loss did not improve
+6680/6680 [==============================] - 20s 3ms/step - loss: 4.7463 - acc: 0.0214 - val_loss: 4.7754 - val_acc: 0.0228
 Epoch 6/20
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.7283 - acc: 0.0251Epoch 00006: val_loss improved from 4.78129 to 4.75492, saving model to saved_models/weights.best.from_scratch.hdf5
-6680/6680 [==============================] - 20s 3ms/step - loss: 4.7282 - acc: 0.0250 - val_loss: 4.7549 - val_acc: 0.0204
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.7256 - acc: 0.0243Epoch 00006: val_loss improved from 4.77388 to 4.74922, saving model to saved_models/weights.best.from_scratch.hdf5
+6680/6680 [==============================] - 20s 3ms/step - loss: 4.7255 - acc: 0.0244 - val_loss: 4.7492 - val_acc: 0.0180
 Epoch 7/20
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.7114 - acc: 0.0257Epoch 00007: val_loss improved from 4.75492 to 4.74729, saving model to saved_models/weights.best.from_scratch.hdf5
-6680/6680 [==============================] - 20s 3ms/step - loss: 4.7109 - acc: 0.0257 - val_loss: 4.7473 - val_acc: 0.0228
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.7076 - acc: 0.0251Epoch 00007: val_loss did not improve
+6680/6680 [==============================] - 20s 3ms/step - loss: 4.7078 - acc: 0.0251 - val_loss: 4.8136 - val_acc: 0.0311
 Epoch 8/20
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.6931 - acc: 0.0255Epoch 00008: val_loss improved from 4.74729 to 4.74292, saving model to saved_models/weights.best.from_scratch.hdf5
-6680/6680 [==============================] - 20s 3ms/step - loss: 4.6935 - acc: 0.0254 - val_loss: 4.7429 - val_acc: 0.0323
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.6871 - acc: 0.0299Epoch 00008: val_loss improved from 4.74922 to 4.72568, saving model to saved_models/weights.best.from_scratch.hdf5
+6680/6680 [==============================] - 20s 3ms/step - loss: 4.6865 - acc: 0.0302 - val_loss: 4.7257 - val_acc: 0.0275
 Epoch 9/20
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.6765 - acc: 0.0332Epoch 00009: val_loss improved from 4.74292 to 4.72522, saving model to saved_models/weights.best.from_scratch.hdf5
-6680/6680 [==============================] - 20s 3ms/step - loss: 4.6761 - acc: 0.0331 - val_loss: 4.7252 - val_acc: 0.0251
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.6681 - acc: 0.0300Epoch 00009: val_loss improved from 4.72568 to 4.71152, saving model to saved_models/weights.best.from_scratch.hdf5
+6680/6680 [==============================] - 20s 3ms/step - loss: 4.6684 - acc: 0.0299 - val_loss: 4.7115 - val_acc: 0.0275
 Epoch 10/20
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.6541 - acc: 0.0342Epoch 00010: val_loss improved from 4.72522 to 4.71382, saving model to saved_models/weights.best.from_scratch.hdf5
-6680/6680 [==============================] - 20s 3ms/step - loss: 4.6542 - acc: 0.0341 - val_loss: 4.7138 - val_acc: 0.0263
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.6471 - acc: 0.0356Epoch 00010: val_loss improved from 4.71152 to 4.69886, saving model to saved_models/weights.best.from_scratch.hdf5
+6680/6680 [==============================] - 20s 3ms/step - loss: 4.6467 - acc: 0.0358 - val_loss: 4.6989 - val_acc: 0.0275
 Epoch 11/20
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.6285 - acc: 0.0368Epoch 00011: val_loss improved from 4.71382 to 4.69742, saving model to saved_models/weights.best.from_scratch.hdf5
-6680/6680 [==============================] - 20s 3ms/step - loss: 4.6285 - acc: 0.0368 - val_loss: 4.6974 - val_acc: 0.0371
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.6291 - acc: 0.0353Epoch 00011: val_loss improved from 4.69886 to 4.68108, saving model to saved_models/weights.best.from_scratch.hdf5
+6680/6680 [==============================] - 20s 3ms/step - loss: 4.6288 - acc: 0.0355 - val_loss: 4.6811 - val_acc: 0.0228
 Epoch 12/20
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.6110 - acc: 0.0431Epoch 00012: val_loss improved from 4.69742 to 4.65844, saving model to saved_models/weights.best.from_scratch.hdf5
-6680/6680 [==============================] - 20s 3ms/step - loss: 4.6109 - acc: 0.0431 - val_loss: 4.6584 - val_acc: 0.0287
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.6067 - acc: 0.0380Epoch 00012: val_loss improved from 4.68108 to 4.66857, saving model to saved_models/weights.best.from_scratch.hdf5
+6680/6680 [==============================] - 20s 3ms/step - loss: 4.6076 - acc: 0.0379 - val_loss: 4.6686 - val_acc: 0.0359
 Epoch 13/20
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.5903 - acc: 0.0399Epoch 00013: val_loss improved from 4.65844 to 4.63956, saving model to saved_models/weights.best.from_scratch.hdf5
-6680/6680 [==============================] - 20s 3ms/step - loss: 4.5905 - acc: 0.0398 - val_loss: 4.6396 - val_acc: 0.0299
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.5863 - acc: 0.0392Epoch 00013: val_loss did not improve
+6680/6680 [==============================] - 20s 3ms/step - loss: 4.5858 - acc: 0.0391 - val_loss: 4.6728 - val_acc: 0.0287
 Epoch 14/20
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.5639 - acc: 0.0482Epoch 00014: val_loss improved from 4.63956 to 4.61833, saving model to saved_models/weights.best.from_scratch.hdf5
-6680/6680 [==============================] - 20s 3ms/step - loss: 4.5642 - acc: 0.0481 - val_loss: 4.6183 - val_acc: 0.0323
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.5669 - acc: 0.0450Epoch 00014: val_loss did not improve
+6680/6680 [==============================] - 20s 3ms/step - loss: 4.5670 - acc: 0.0451 - val_loss: 4.6733 - val_acc: 0.0275
 Epoch 15/20
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.5408 - acc: 0.0506Epoch 00015: val_loss improved from 4.61833 to 4.60646, saving model to saved_models/weights.best.from_scratch.hdf5
-6680/6680 [==============================] - 20s 3ms/step - loss: 4.5414 - acc: 0.0504 - val_loss: 4.6065 - val_acc: 0.0311
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.5432 - acc: 0.0434Epoch 00015: val_loss improved from 4.66857 to 4.65156, saving model to saved_models/weights.best.from_scratch.hdf5
+6680/6680 [==============================] - 20s 3ms/step - loss: 4.5438 - acc: 0.0433 - val_loss: 4.6516 - val_acc: 0.0311
 Epoch 16/20
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.5210 - acc: 0.0508Epoch 00016: val_loss improved from 4.60646 to 4.58056, saving model to saved_models/weights.best.from_scratch.hdf5
-6680/6680 [==============================] - 20s 3ms/step - loss: 4.5205 - acc: 0.0510 - val_loss: 4.5806 - val_acc: 0.0383
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.5231 - acc: 0.0468Epoch 00016: val_loss improved from 4.65156 to 4.59745, saving model to saved_models/weights.best.from_scratch.hdf5
+6680/6680 [==============================] - 20s 3ms/step - loss: 4.5235 - acc: 0.0467 - val_loss: 4.5975 - val_acc: 0.0347
 Epoch 17/20
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.4995 - acc: 0.0521Epoch 00017: val_loss did not improve
-6680/6680 [==============================] - 20s 3ms/step - loss: 4.4998 - acc: 0.0519 - val_loss: 4.6253 - val_acc: 0.0371
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.5040 - acc: 0.0491Epoch 00017: val_loss improved from 4.59745 to 4.58722, saving model to saved_models/weights.best.from_scratch.hdf5
+6680/6680 [==============================] - 20s 3ms/step - loss: 4.5045 - acc: 0.0491 - val_loss: 4.5872 - val_acc: 0.0431
 Epoch 18/20
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.4766 - acc: 0.0542Epoch 00018: val_loss improved from 4.58056 to 4.55158, saving model to saved_models/weights.best.from_scratch.hdf5
-6680/6680 [==============================] - 20s 3ms/step - loss: 4.4767 - acc: 0.0542 - val_loss: 4.5516 - val_acc: 0.0371
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.4881 - acc: 0.0480Epoch 00018: val_loss improved from 4.58722 to 4.57938, saving model to saved_models/weights.best.from_scratch.hdf5
+6680/6680 [==============================] - 20s 3ms/step - loss: 4.4888 - acc: 0.0479 - val_loss: 4.5794 - val_acc: 0.0371
 Epoch 19/20
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.4517 - acc: 0.0575Epoch 00019: val_loss improved from 4.55158 to 4.52379, saving model to saved_models/weights.best.from_scratch.hdf5
-6680/6680 [==============================] - 20s 3ms/step - loss: 4.4519 - acc: 0.0575 - val_loss: 4.5238 - val_acc: 0.0419
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.4673 - acc: 0.0538Epoch 00019: val_loss did not improve
+6680/6680 [==============================] - 20s 3ms/step - loss: 4.4663 - acc: 0.0542 - val_loss: 4.5938 - val_acc: 0.0443
 Epoch 20/20
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.4280 - acc: 0.0635Epoch 00020: val_loss improved from 4.52379 to 4.50259, saving model to saved_models/weights.best.from_scratch.hdf5
-6680/6680 [==============================] - 20s 3ms/step - loss: 4.4283 - acc: 0.0636 - val_loss: 4.5026 - val_acc: 0.0503
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.4491 - acc: 0.0526Epoch 00020: val_loss did not improve
+6680/6680 [==============================] - 20s 3ms/step - loss: 4.4491 - acc: 0.0525 - val_loss: 4.5799 - val_acc: 0.0443
 </pre>
                         </div>
                     </div>
 
                     <div class="output_area">
 
-                        <div class="prompt output_prompt">Out[22]:</div>
+                        <div class="prompt output_prompt">Out[20]:</div>
 
 
                         <div class="output_text output_subarea output_execute_result">
-                            <pre>&lt;keras.callbacks.History at 0x7f971db1d2b0&gt;</pre>
+                            <pre>&lt;keras.callbacks.History at 0x7f99cb63d5f8&gt;</pre>
                         </div>
 
                     </div>
@@ -18908,7 +18965,7 @@ Epoch 20/20
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[23]:</div>
+                <div class="prompt input_prompt">In&nbsp;[21]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -18941,7 +18998,7 @@ Epoch 20/20
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[25]:</div>
+                <div class="prompt input_prompt">In&nbsp;[22]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -19014,7 +19071,7 @@ Epoch 20/20
 
 
                         <div class="output_subarea output_stream output_stdout output_text">
-<pre>Test accuracy: 6.1005%
+<pre>Test accuracy: 4.4258%
 </pre>
                         </div>
                     </div>
@@ -19047,7 +19104,7 @@ Epoch 20/20
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[26]:</div>
+                <div class="prompt input_prompt">In&nbsp;[23]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -19094,7 +19151,7 @@ Epoch 20/20
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[27]:</div>
+                <div class="prompt input_prompt">In&nbsp;[24]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -19143,9 +19200,9 @@ Epoch 20/20
 <pre>_________________________________________________________________
 Layer (type)                 Output Shape              Param #
 =================================================================
-global_average_pooling2d_3 ( (None, 512)               0
+global_average_pooling2d_2 ( (None, 512)               0
 _________________________________________________________________
-dense_3 (Dense)              (None, 133)               68229
+dense_2 (Dense)              (None, 133)               68229
 =================================================================
 Total params: 68,229
 Trainable params: 68,229
@@ -19172,7 +19229,7 @@ _________________________________________________________________
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[28]:</div>
+                <div class="prompt input_prompt">In&nbsp;[25]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -19209,7 +19266,7 @@ _________________________________________________________________
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[29]:</div>
+                <div class="prompt input_prompt">In&nbsp;[26]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -19268,76 +19325,76 @@ _________________________________________________________________
                         <div class="output_subarea output_stream output_stdout output_text">
 <pre>Train on 6680 samples, validate on 835 samples
 Epoch 1/20
-6620/6680 [============================&gt;.] - ETA: 0s - loss: 12.4802 - acc: 0.1192Epoch 00001: val_loss improved from inf to 10.82588, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 297us/step - loss: 12.4728 - acc: 0.1196 - val_loss: 10.8259 - val_acc: 0.2024
+6480/6680 [============================&gt;.] - ETA: 0s - loss: 12.4801 - acc: 0.1193Epoch 00001: val_loss improved from inf to 11.19128, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 317us/step - loss: 12.4417 - acc: 0.1219 - val_loss: 11.1913 - val_acc: 0.1880
 Epoch 2/20
-6440/6680 [===========================&gt;..] - ETA: 0s - loss: 9.9617 - acc: 0.2817 Epoch 00002: val_loss improved from 10.82588 to 9.52106, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 241us/step - loss: 9.9450 - acc: 0.2826 - val_loss: 9.5211 - val_acc: 0.3030
+6520/6680 [============================&gt;.] - ETA: 0s - loss: 10.4900 - acc: 0.2664Epoch 00002: val_loss improved from 11.19128 to 10.44150, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 263us/step - loss: 10.4747 - acc: 0.2677 - val_loss: 10.4415 - val_acc: 0.2623
 Epoch 3/20
-6440/6680 [===========================&gt;..] - ETA: 0s - loss: 9.1543 - acc: 0.3582Epoch 00003: val_loss improved from 9.52106 to 9.37853, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 240us/step - loss: 9.1508 - acc: 0.3596 - val_loss: 9.3785 - val_acc: 0.3377
+6620/6680 [============================&gt;.] - ETA: 0s - loss: 9.9600 - acc: 0.3177Epoch 00003: val_loss improved from 10.44150 to 10.23317, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 261us/step - loss: 9.9452 - acc: 0.3184 - val_loss: 10.2332 - val_acc: 0.2671
 Epoch 4/20
-6500/6680 [============================&gt;.] - ETA: 0s - loss: 8.9393 - acc: 0.3965Epoch 00004: val_loss improved from 9.37853 to 9.32331, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 253us/step - loss: 8.9300 - acc: 0.3963 - val_loss: 9.3233 - val_acc: 0.3437
+6520/6680 [============================&gt;.] - ETA: 0s - loss: 9.5960 - acc: 0.3567Epoch 00004: val_loss improved from 10.23317 to 10.04057, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 263us/step - loss: 9.6159 - acc: 0.3558 - val_loss: 10.0406 - val_acc: 0.2994
 Epoch 5/20
-6600/6680 [============================&gt;.] - ETA: 0s - loss: 8.7493 - acc: 0.4176Epoch 00005: val_loss improved from 9.32331 to 9.07061, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 252us/step - loss: 8.7452 - acc: 0.4177 - val_loss: 9.0706 - val_acc: 0.3581
+6540/6680 [============================&gt;.] - ETA: 0s - loss: 9.2245 - acc: 0.3815Epoch 00005: val_loss improved from 10.04057 to 9.59237, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 280us/step - loss: 9.2137 - acc: 0.3823 - val_loss: 9.5924 - val_acc: 0.3162
 Epoch 6/20
-6560/6680 [============================&gt;.] - ETA: 0s - loss: 8.5109 - acc: 0.4392Epoch 00006: val_loss improved from 9.07061 to 8.95276, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 252us/step - loss: 8.5103 - acc: 0.4386 - val_loss: 8.9528 - val_acc: 0.3569
+6440/6680 [===========================&gt;..] - ETA: 0s - loss: 8.9500 - acc: 0.4092Epoch 00006: val_loss improved from 9.59237 to 9.47530, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 255us/step - loss: 8.9657 - acc: 0.4081 - val_loss: 9.4753 - val_acc: 0.3437
 Epoch 7/20
-6620/6680 [============================&gt;.] - ETA: 0s - loss: 8.3222 - acc: 0.4554Epoch 00007: val_loss improved from 8.95276 to 8.87812, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 267us/step - loss: 8.3380 - acc: 0.4542 - val_loss: 8.8781 - val_acc: 0.3713
+6480/6680 [============================&gt;.] - ETA: 0s - loss: 8.8909 - acc: 0.4239Epoch 00007: val_loss improved from 9.47530 to 9.45499, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 271us/step - loss: 8.8925 - acc: 0.4240 - val_loss: 9.4550 - val_acc: 0.3377
 Epoch 8/20
-6500/6680 [============================&gt;.] - ETA: 0s - loss: 8.2914 - acc: 0.4683Epoch 00008: val_loss did not improve
-6680/6680 [==============================] - 2s 249us/step - loss: 8.2838 - acc: 0.4683 - val_loss: 8.8861 - val_acc: 0.3713
+6480/6680 [============================&gt;.] - ETA: 0s - loss: 8.8295 - acc: 0.4293Epoch 00008: val_loss improved from 9.45499 to 9.33136, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 288us/step - loss: 8.8306 - acc: 0.4293 - val_loss: 9.3314 - val_acc: 0.3593
 Epoch 9/20
-6480/6680 [============================&gt;.] - ETA: 0s - loss: 8.1958 - acc: 0.4730Epoch 00009: val_loss improved from 8.87812 to 8.79014, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 240us/step - loss: 8.2031 - acc: 0.4726 - val_loss: 8.7901 - val_acc: 0.3796
+6500/6680 [============================&gt;.] - ETA: 0s - loss: 8.7555 - acc: 0.4371Epoch 00009: val_loss improved from 9.33136 to 9.31748, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 264us/step - loss: 8.7367 - acc: 0.4382 - val_loss: 9.3175 - val_acc: 0.3509
 Epoch 10/20
-6440/6680 [===========================&gt;..] - ETA: 0s - loss: 8.1532 - acc: 0.4811Epoch 00010: val_loss improved from 8.79014 to 8.78547, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 247us/step - loss: 8.1579 - acc: 0.4802 - val_loss: 8.7855 - val_acc: 0.3784
+6540/6680 [============================&gt;.] - ETA: 0s - loss: 8.6764 - acc: 0.4446Epoch 00010: val_loss improved from 9.31748 to 9.31497, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 269us/step - loss: 8.6697 - acc: 0.4452 - val_loss: 9.3150 - val_acc: 0.3617
 Epoch 11/20
-6440/6680 [===========================&gt;..] - ETA: 0s - loss: 8.0918 - acc: 0.4857Epoch 00011: val_loss improved from 8.78547 to 8.67925, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 243us/step - loss: 8.0941 - acc: 0.4856 - val_loss: 8.6792 - val_acc: 0.3880
+6640/6680 [============================&gt;.] - ETA: 0s - loss: 8.6337 - acc: 0.4544Epoch 00011: val_loss improved from 9.31497 to 9.24839, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 273us/step - loss: 8.6424 - acc: 0.4539 - val_loss: 9.2484 - val_acc: 0.3665
 Epoch 12/20
-6580/6680 [============================&gt;.] - ETA: 0s - loss: 7.9940 - acc: 0.4939Epoch 00012: val_loss did not improve
-6680/6680 [==============================] - 2s 263us/step - loss: 8.0073 - acc: 0.4933 - val_loss: 8.7588 - val_acc: 0.3832
+6520/6680 [============================&gt;.] - ETA: 0s - loss: 8.5828 - acc: 0.4558Epoch 00012: val_loss improved from 9.24839 to 9.24516, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 251us/step - loss: 8.5856 - acc: 0.4551 - val_loss: 9.2452 - val_acc: 0.3581
 Epoch 13/20
-6480/6680 [============================&gt;.] - ETA: 0s - loss: 8.0002 - acc: 0.4968Epoch 00013: val_loss did not improve
-6680/6680 [==============================] - 2s 239us/step - loss: 7.9936 - acc: 0.4970 - val_loss: 8.7026 - val_acc: 0.3844
+6540/6680 [============================&gt;.] - ETA: 0s - loss: 8.3904 - acc: 0.4636Epoch 00013: val_loss improved from 9.24516 to 8.98879, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 252us/step - loss: 8.4034 - acc: 0.4629 - val_loss: 8.9888 - val_acc: 0.3725
 Epoch 14/20
-6480/6680 [============================&gt;.] - ETA: 0s - loss: 7.8990 - acc: 0.5002Epoch 00014: val_loss improved from 8.67925 to 8.49263, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 265us/step - loss: 7.8756 - acc: 0.5018 - val_loss: 8.4926 - val_acc: 0.4072
+6520/6680 [============================&gt;.] - ETA: 0s - loss: 8.2129 - acc: 0.4702Epoch 00014: val_loss improved from 8.98879 to 8.88534, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 251us/step - loss: 8.2080 - acc: 0.4708 - val_loss: 8.8853 - val_acc: 0.3832
 Epoch 15/20
-6500/6680 [============================&gt;.] - ETA: 0s - loss: 7.6784 - acc: 0.5091Epoch 00015: val_loss improved from 8.49263 to 8.26567, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 265us/step - loss: 7.6795 - acc: 0.5090 - val_loss: 8.2657 - val_acc: 0.4192
+6500/6680 [============================&gt;.] - ETA: 0s - loss: 8.0349 - acc: 0.4854Epoch 00015: val_loss improved from 8.88534 to 8.77999, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 264us/step - loss: 8.0220 - acc: 0.4861 - val_loss: 8.7800 - val_acc: 0.3844
 Epoch 16/20
-6540/6680 [============================&gt;.] - ETA: 0s - loss: 7.5580 - acc: 0.5234Epoch 00016: val_loss did not improve
-6680/6680 [==============================] - 2s 247us/step - loss: 7.5348 - acc: 0.5250 - val_loss: 8.2793 - val_acc: 0.4240
+6540/6680 [============================&gt;.] - ETA: 0s - loss: 7.9718 - acc: 0.4946Epoch 00016: val_loss did not improve
+6680/6680 [==============================] - 2s 259us/step - loss: 7.9809 - acc: 0.4943 - val_loss: 8.7854 - val_acc: 0.3940
 Epoch 17/20
-6600/6680 [============================&gt;.] - ETA: 0s - loss: 7.5285 - acc: 0.5279Epoch 00017: val_loss improved from 8.26567 to 8.20787, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 252us/step - loss: 7.5229 - acc: 0.5281 - val_loss: 8.2079 - val_acc: 0.4192
+6480/6680 [============================&gt;.] - ETA: 0s - loss: 7.9693 - acc: 0.4966Epoch 00017: val_loss improved from 8.77999 to 8.74439, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 252us/step - loss: 7.9533 - acc: 0.4976 - val_loss: 8.7444 - val_acc: 0.3928
 Epoch 18/20
-6500/6680 [============================&gt;.] - ETA: 0s - loss: 7.5293 - acc: 0.5294Epoch 00018: val_loss did not improve
-6680/6680 [==============================] - 2s 239us/step - loss: 7.5124 - acc: 0.5304 - val_loss: 8.2495 - val_acc: 0.4311
+6580/6680 [============================&gt;.] - ETA: 0s - loss: 7.8727 - acc: 0.5029Epoch 00018: val_loss improved from 8.74439 to 8.70045, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 266us/step - loss: 7.8687 - acc: 0.5031 - val_loss: 8.7005 - val_acc: 0.3964
 Epoch 19/20
-6640/6680 [============================&gt;.] - ETA: 0s - loss: 7.4887 - acc: 0.5318Epoch 00019: val_loss did not improve
-6680/6680 [==============================] - 2s 243us/step - loss: 7.4921 - acc: 0.5316 - val_loss: 8.2355 - val_acc: 0.4072
+6540/6680 [============================&gt;.] - ETA: 0s - loss: 7.7746 - acc: 0.5080Epoch 00019: val_loss improved from 8.70045 to 8.63219, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 262us/step - loss: 7.7888 - acc: 0.5070 - val_loss: 8.6322 - val_acc: 0.3952
 Epoch 20/20
-6480/6680 [============================&gt;.] - ETA: 0s - loss: 7.4177 - acc: 0.5347Epoch 00020: val_loss did not improve
-6680/6680 [==============================] - 2s 238us/step - loss: 7.4146 - acc: 0.5347 - val_loss: 8.2178 - val_acc: 0.4180
+6460/6680 [============================&gt;.] - ETA: 0s - loss: 7.6084 - acc: 0.5155Epoch 00020: val_loss improved from 8.63219 to 8.40644, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 254us/step - loss: 7.6259 - acc: 0.5148 - val_loss: 8.4064 - val_acc: 0.4192
 </pre>
                         </div>
                     </div>
 
                     <div class="output_area">
 
-                        <div class="prompt output_prompt">Out[29]:</div>
+                        <div class="prompt output_prompt">Out[26]:</div>
 
 
                         <div class="output_text output_subarea output_execute_result">
-                            <pre>&lt;keras.callbacks.History at 0x7f971dd82ef0&gt;</pre>
+                            <pre>&lt;keras.callbacks.History at 0x7f99e01f6128&gt;</pre>
                         </div>
 
                     </div>
@@ -19361,7 +19418,7 @@ Epoch 20/20
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[30]:</div>
+                <div class="prompt input_prompt">In&nbsp;[27]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -19395,7 +19452,7 @@ Epoch 20/20
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[31]:</div>
+                <div class="prompt input_prompt">In&nbsp;[28]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -19466,7 +19523,7 @@ Epoch 20/20
 
 
                         <div class="output_subarea output_stream output_stdout output_text">
-<pre>Test accuracy: 42.7033%
+<pre>Test accuracy: 40.4306%
 </pre>
                         </div>
                     </div>
@@ -19489,7 +19546,7 @@ Epoch 20/20
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[32]:</div>
+                <div class="prompt input_prompt">In&nbsp;[29]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -19500,6 +19557,17 @@ Epoch 20/20
                                     class="p">(</span><span
                                     class="n">img_path</span><span
                                     class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function takes a path to an image as input and returns the dog </span>
+<span class="sd">    breed that is predicted by the model.</span>
+
+<span class="sd">    Parameter:</span>
+<span class="sd">    img_path: the path of the image user wants to identify the possible dog </span>
+<span class="sd">    breed</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    The possible dog breed (name from the dog_names list) predicted</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># extract bottleneck features</span>
     <span class="n">bottleneck_feature</span> <span class="o">=</span> <span
                                     class="n">extract_VGG16</span><span
@@ -19599,7 +19667,7 @@ test_{network} = bottleneck_features['test']</code></pre>
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[37]:</div>
+                <div class="prompt input_prompt">In&nbsp;[30]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -19695,7 +19763,7 @@ test_{network} = bottleneck_features['test']</code></pre>
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[39]:</div>
+                <div class="prompt input_prompt">In&nbsp;[31]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -19745,9 +19813,9 @@ test_{network} = bottleneck_features['test']</code></pre>
 <pre>_________________________________________________________________
 Layer (type)                 Output Shape              Param #
 =================================================================
-global_average_pooling2d_6 ( (None, 2048)              0
+global_average_pooling2d_3 ( (None, 2048)              0
 _________________________________________________________________
-dense_7 (Dense)              (None, 133)               272517
+dense_3 (Dense)              (None, 133)               272517
 =================================================================
 Total params: 272,517
 Trainable params: 272,517
@@ -19775,7 +19843,7 @@ _________________________________________________________________
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[43]:</div>
+                <div class="prompt input_prompt">In&nbsp;[32]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -19822,7 +19890,7 @@ _________________________________________________________________
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[46]:</div>
+                <div class="prompt input_prompt">In&nbsp;[33]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -19879,76 +19947,76 @@ _________________________________________________________________
                         <div class="output_subarea output_stream output_stdout output_text">
 <pre>Train on 6680 samples, validate on 835 samples
 Epoch 1/20
-6620/6680 [============================&gt;.] - ETA: 0s - loss: 1.6287 - acc: 0.5964Epoch 00001: val_loss improved from inf to 0.87725, saving model to saved_models/weights.best.ResNet50.hdf5
-6680/6680 [==============================] - 2s 285us/step - loss: 1.6223 - acc: 0.5975 - val_loss: 0.8772 - val_acc: 0.7341
+6500/6680 [============================&gt;.] - ETA: 0s - loss: 1.6432 - acc: 0.5926Epoch 00001: val_loss improved from inf to 0.79975, saving model to saved_models/weights.best.ResNet50.hdf5
+6680/6680 [==============================] - 2s 282us/step - loss: 1.6234 - acc: 0.5963 - val_loss: 0.7997 - val_acc: 0.7437
 Epoch 2/20
-6560/6680 [============================&gt;.] - ETA: 0s - loss: 0.4436 - acc: 0.8614Epoch 00002: val_loss improved from 0.87725 to 0.71907, saving model to saved_models/weights.best.ResNet50.hdf5
-6680/6680 [==============================] - 2s 233us/step - loss: 0.4433 - acc: 0.8620 - val_loss: 0.7191 - val_acc: 0.7844
+6600/6680 [============================&gt;.] - ETA: 0s - loss: 0.4351 - acc: 0.8656Epoch 00002: val_loss improved from 0.79975 to 0.64398, saving model to saved_models/weights.best.ResNet50.hdf5
+6680/6680 [==============================] - 2s 242us/step - loss: 0.4367 - acc: 0.8654 - val_loss: 0.6440 - val_acc: 0.7952
 Epoch 3/20
-6520/6680 [============================&gt;.] - ETA: 0s - loss: 0.2635 - acc: 0.9166Epoch 00003: val_loss improved from 0.71907 to 0.70024, saving model to saved_models/weights.best.ResNet50.hdf5
-6680/6680 [==============================] - 2s 229us/step - loss: 0.2627 - acc: 0.9166 - val_loss: 0.7002 - val_acc: 0.7916
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 0.2592 - acc: 0.9189Epoch 00003: val_loss improved from 0.64398 to 0.64128, saving model to saved_models/weights.best.ResNet50.hdf5
+6680/6680 [==============================] - 2s 229us/step - loss: 0.2591 - acc: 0.9190 - val_loss: 0.6413 - val_acc: 0.8048
 Epoch 4/20
-6480/6680 [============================&gt;.] - ETA: 0s - loss: 0.1783 - acc: 0.9421Epoch 00004: val_loss improved from 0.70024 to 0.67639, saving model to saved_models/weights.best.ResNet50.hdf5
-6680/6680 [==============================] - 2s 226us/step - loss: 0.1792 - acc: 0.9421 - val_loss: 0.6764 - val_acc: 0.7964
+6640/6680 [============================&gt;.] - ETA: 0s - loss: 0.1741 - acc: 0.9470Epoch 00004: val_loss improved from 0.64128 to 0.61260, saving model to saved_models/weights.best.ResNet50.hdf5
+6680/6680 [==============================] - 2s 237us/step - loss: 0.1738 - acc: 0.9470 - val_loss: 0.6126 - val_acc: 0.8132
 Epoch 5/20
-6500/6680 [============================&gt;.] - ETA: 0s - loss: 0.1233 - acc: 0.9632Epoch 00005: val_loss did not improve
-6680/6680 [==============================] - 2s 237us/step - loss: 0.1260 - acc: 0.9618 - val_loss: 0.6864 - val_acc: 0.7988
+6500/6680 [============================&gt;.] - ETA: 0s - loss: 0.1175 - acc: 0.9614Epoch 00005: val_loss did not improve
+6680/6680 [==============================] - 2s 235us/step - loss: 0.1171 - acc: 0.9615 - val_loss: 0.6757 - val_acc: 0.8060
 Epoch 6/20
-6620/6680 [============================&gt;.] - ETA: 0s - loss: 0.0861 - acc: 0.9718Epoch 00006: val_loss improved from 0.67639 to 0.67612, saving model to saved_models/weights.best.ResNet50.hdf5
-6680/6680 [==============================] - 1s 223us/step - loss: 0.0861 - acc: 0.9716 - val_loss: 0.6761 - val_acc: 0.8180
+6480/6680 [============================&gt;.] - ETA: 0s - loss: 0.0858 - acc: 0.9767Epoch 00006: val_loss did not improve
+6680/6680 [==============================] - 1s 224us/step - loss: 0.0875 - acc: 0.9757 - val_loss: 0.6564 - val_acc: 0.8168
 Epoch 7/20
-6640/6680 [============================&gt;.] - ETA: 0s - loss: 0.0637 - acc: 0.9819Epoch 00007: val_loss did not improve
-6680/6680 [==============================] - 2s 249us/step - loss: 0.0635 - acc: 0.9820 - val_loss: 0.6888 - val_acc: 0.8275
+6600/6680 [============================&gt;.] - ETA: 0s - loss: 0.0647 - acc: 0.9832Epoch 00007: val_loss did not improve
+6680/6680 [==============================] - 2s 229us/step - loss: 0.0641 - acc: 0.9834 - val_loss: 0.7115 - val_acc: 0.8024
 Epoch 8/20
-6640/6680 [============================&gt;.] - ETA: 0s - loss: 0.0508 - acc: 0.9867Epoch 00008: val_loss did not improve
-6680/6680 [==============================] - 2s 235us/step - loss: 0.0507 - acc: 0.9868 - val_loss: 0.7230 - val_acc: 0.8192
+6640/6680 [============================&gt;.] - ETA: 0s - loss: 0.0465 - acc: 0.9873Epoch 00008: val_loss did not improve
+6680/6680 [==============================] - 2s 249us/step - loss: 0.0465 - acc: 0.9873 - val_loss: 0.7026 - val_acc: 0.8084
 Epoch 9/20
-6560/6680 [============================&gt;.] - ETA: 0s - loss: 0.0377 - acc: 0.9902Epoch 00009: val_loss did not improve
-6680/6680 [==============================] - 2s 227us/step - loss: 0.0382 - acc: 0.9898 - val_loss: 0.7793 - val_acc: 0.8275
+6520/6680 [============================&gt;.] - ETA: 0s - loss: 0.0349 - acc: 0.9910Epoch 00009: val_loss did not improve
+6680/6680 [==============================] - 1s 222us/step - loss: 0.0345 - acc: 0.9910 - val_loss: 0.7298 - val_acc: 0.8132
 Epoch 10/20
-6640/6680 [============================&gt;.] - ETA: 0s - loss: 0.0301 - acc: 0.9917Epoch 00010: val_loss did not improve
-6680/6680 [==============================] - 1s 221us/step - loss: 0.0302 - acc: 0.9916 - val_loss: 0.7689 - val_acc: 0.8120
+6500/6680 [============================&gt;.] - ETA: 0s - loss: 0.0267 - acc: 0.9928Epoch 00010: val_loss did not improve
+6680/6680 [==============================] - 1s 223us/step - loss: 0.0263 - acc: 0.9928 - val_loss: 0.7221 - val_acc: 0.8275
 Epoch 11/20
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 0.0231 - acc: 0.9928Epoch 00011: val_loss did not improve
-6680/6680 [==============================] - 2s 251us/step - loss: 0.0238 - acc: 0.9925 - val_loss: 0.7483 - val_acc: 0.8180
+6420/6680 [===========================&gt;..] - ETA: 0s - loss: 0.0220 - acc: 0.9944Epoch 00011: val_loss did not improve
+6680/6680 [==============================] - 1s 224us/step - loss: 0.0221 - acc: 0.9942 - val_loss: 0.7488 - val_acc: 0.8240
 Epoch 12/20
-6500/6680 [============================&gt;.] - ETA: 0s - loss: 0.0169 - acc: 0.9960Epoch 00012: val_loss did not improve
-6680/6680 [==============================] - 2s 237us/step - loss: 0.0167 - acc: 0.9961 - val_loss: 0.7950 - val_acc: 0.8180
+6440/6680 [===========================&gt;..] - ETA: 0s - loss: 0.0177 - acc: 0.9961Epoch 00012: val_loss did not improve
+6680/6680 [==============================] - 1s 220us/step - loss: 0.0181 - acc: 0.9960 - val_loss: 0.7975 - val_acc: 0.8263
 Epoch 13/20
-6640/6680 [============================&gt;.] - ETA: 0s - loss: 0.0145 - acc: 0.9962Epoch 00013: val_loss did not improve
-6680/6680 [==============================] - 1s 221us/step - loss: 0.0145 - acc: 0.9963 - val_loss: 0.8365 - val_acc: 0.8228
+6500/6680 [============================&gt;.] - ETA: 0s - loss: 0.0127 - acc: 0.9974Epoch 00013: val_loss did not improve
+6680/6680 [==============================] - 2s 249us/step - loss: 0.0131 - acc: 0.9972 - val_loss: 0.7685 - val_acc: 0.8204
 Epoch 14/20
-6560/6680 [============================&gt;.] - ETA: 0s - loss: 0.0123 - acc: 0.9963Epoch 00014: val_loss did not improve
-6680/6680 [==============================] - 2s 226us/step - loss: 0.0122 - acc: 0.9964 - val_loss: 0.8452 - val_acc: 0.8240
+6540/6680 [============================&gt;.] - ETA: 0s - loss: 0.0121 - acc: 0.9969Epoch 00014: val_loss did not improve
+6680/6680 [==============================] - 2s 234us/step - loss: 0.0138 - acc: 0.9967 - val_loss: 0.8090 - val_acc: 0.8275
 Epoch 15/20
-6500/6680 [============================&gt;.] - ETA: 0s - loss: 0.0112 - acc: 0.9972Epoch 00015: val_loss did not improve
-6680/6680 [==============================] - 1s 224us/step - loss: 0.0110 - acc: 0.9973 - val_loss: 0.8407 - val_acc: 0.8275
+6420/6680 [===========================&gt;..] - ETA: 0s - loss: 0.0092 - acc: 0.9983Epoch 00015: val_loss did not improve
+6680/6680 [==============================] - 2s 238us/step - loss: 0.0091 - acc: 0.9982 - val_loss: 0.8616 - val_acc: 0.8335
 Epoch 16/20
-6580/6680 [============================&gt;.] - ETA: 0s - loss: 0.0095 - acc: 0.9977Epoch 00016: val_loss did not improve
-6680/6680 [==============================] - 2s 230us/step - loss: 0.0093 - acc: 0.9978 - val_loss: 0.8696 - val_acc: 0.8287
+6480/6680 [============================&gt;.] - ETA: 0s - loss: 0.0096 - acc: 0.9974Epoch 00016: val_loss did not improve
+6680/6680 [==============================] - 2s 230us/step - loss: 0.0095 - acc: 0.9975 - val_loss: 0.8652 - val_acc: 0.8192
 Epoch 17/20
-6580/6680 [============================&gt;.] - ETA: 0s - loss: 0.0071 - acc: 0.9977Epoch 00017: val_loss did not improve
-6680/6680 [==============================] - 1s 222us/step - loss: 0.0070 - acc: 0.9978 - val_loss: 0.8675 - val_acc: 0.8311
+6620/6680 [============================&gt;.] - ETA: 0s - loss: 0.0087 - acc: 0.9977Epoch 00017: val_loss did not improve
+6680/6680 [==============================] - 2s 250us/step - loss: 0.0087 - acc: 0.9978 - val_loss: 0.8818 - val_acc: 0.8299
 Epoch 18/20
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 0.0068 - acc: 0.9985Epoch 00018: val_loss did not improve
-6680/6680 [==============================] - 2s 239us/step - loss: 0.0068 - acc: 0.9985 - val_loss: 0.8952 - val_acc: 0.8407
+6640/6680 [============================&gt;.] - ETA: 0s - loss: 0.0065 - acc: 0.9983Epoch 00018: val_loss did not improve
+6680/6680 [==============================] - 2s 238us/step - loss: 0.0065 - acc: 0.9984 - val_loss: 0.8895 - val_acc: 0.8192
 Epoch 19/20
-6480/6680 [============================&gt;.] - ETA: 0s - loss: 0.0056 - acc: 0.9980Epoch 00019: val_loss did not improve
-6680/6680 [==============================] - 1s 224us/step - loss: 0.0056 - acc: 0.9981 - val_loss: 0.8751 - val_acc: 0.8335
+6480/6680 [============================&gt;.] - ETA: 0s - loss: 0.0070 - acc: 0.9986Epoch 00019: val_loss did not improve
+6680/6680 [==============================] - 2s 225us/step - loss: 0.0070 - acc: 0.9987 - val_loss: 0.9409 - val_acc: 0.8287
 Epoch 20/20
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 0.0064 - acc: 0.9986Epoch 00020: val_loss did not improve
-6680/6680 [==============================] - 1s 221us/step - loss: 0.0068 - acc: 0.9985 - val_loss: 0.9455 - val_acc: 0.8240
+6640/6680 [============================&gt;.] - ETA: 0s - loss: 0.0060 - acc: 0.9983Epoch 00020: val_loss did not improve
+6680/6680 [==============================] - 2s 229us/step - loss: 0.0060 - acc: 0.9984 - val_loss: 0.9559 - val_acc: 0.8204
 </pre>
                         </div>
                     </div>
 
                     <div class="output_area">
 
-                        <div class="prompt output_prompt">Out[46]:</div>
+                        <div class="prompt output_prompt">Out[33]:</div>
 
 
                         <div class="output_text output_subarea output_execute_result">
-                            <pre>&lt;keras.callbacks.History at 0x7f9724075588&gt;</pre>
+                            <pre>&lt;keras.callbacks.History at 0x7f99c9efc828&gt;</pre>
                         </div>
 
                     </div>
@@ -19972,7 +20040,7 @@ Epoch 20/20
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[48]:</div>
+                <div class="prompt input_prompt">In&nbsp;[34]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -20006,7 +20074,7 @@ Epoch 20/20
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[50]:</div>
+                <div class="prompt input_prompt">In&nbsp;[35]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -20074,7 +20142,7 @@ Epoch 20/20
 
 
                         <div class="output_subarea output_stream output_stdout output_text">
-<pre>Test accuracy: 80.5024%
+<pre>Test accuracy: 82.2967%
 </pre>
                         </div>
                     </div>
@@ -20133,7 +20201,7 @@ Epoch 20/20
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[80]:</div>
+                <div class="prompt input_prompt">In&nbsp;[37]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -20147,11 +20215,13 @@ Epoch 20/20
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Identify dog breed for the image stored at img_path</span>
 <span class="sd">    </span>
-<span class="sd">    INPUT:</span>
-<span class="sd">        img_path: path of image for which prediction has to be made</span>
-<span class="sd">    OUTPUT:</span>
-<span class="sd">        breed of the dog</span>
+<span class="sd">    Parameter:</span>
+<span class="sd">    img_path: path of image for which prediction has to be made</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    breed of the dog</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># extract bottleneck features</span>
     <span class="n">bottleneck_feature</span> <span class="o">=</span> <span
                                     class="n">extract_Resnet50</span><span
                                     class="p">(</span><span class="n">path_to_tensor</span><span
@@ -20164,22 +20234,23 @@ Epoch 20/20
                                     class="n">shape</span><span
                                     class="p">)</span>
 
-<span class="c1">#     bottleneck_feature = np.expand_dims(bottleneck_feature, axis=0)</span>
-<span class="c1">#     bottleneck_feature = np.expand_dims(bottleneck_feature, axis=0)</span>
+    <span class="c1"># bottleneck_feature = np.expand_dims(bottleneck_feature, axis=0)</span>
+    <span class="c1"># bottleneck_feature = np.expand_dims(bottleneck_feature, axis=0)</span>
 
+    <span class="c1"># obtain predicted vector</span>
     <span class="n">predicted_vector</span> <span class="o">=</span> <span
                                     class="n">ResNet50_model</span><span
                                     class="o">.</span><span
                                     class="n">predict</span><span
                                     class="p">(</span><span class="n">bottleneck_feature</span><span
                                     class="p">)</span>
-
+    <span class="c1"># store the maxinum index of the vector</span>
     <span class="n">prediction</span> <span class="o">=</span> <span class="n">np</span><span
                                     class="o">.</span><span
                                     class="n">argmax</span><span
                                     class="p">(</span><span class="n">predicted_vector</span><span
                                     class="p">)</span>
-
+    <span class="c1"># extract the breed name from the stored value</span>
     <span class="n">dog_name</span> <span class="o">=</span> <span class="n">dog_names</span><span
                                     class="p">[</span><span
                                     class="n">prediction</span><span
@@ -20191,11 +20262,13 @@ Epoch 20/20
                                     class="o">-</span><span
                                     class="mi">1</span><span class="p">]</span>
 
-<span class="c1">#     print(f&#39;This image looks like a {dog_names[prediction].split(&quot;.&quot;)[-1]}.&#39; )</span>
+    <span class="c1"># print(f&#39;This image looks like a {dog_names[prediction].split(&quot;.&quot;)[-1]}.&#39; )</span>
 
     <span class="k">return</span> <span class="n">dog_name</span>
 
-<span class="c1">#converting images to gray</span>
+<span class="n">img_path</span> <span class="o">=</span> <span class="s1">&#39;uploads/image2.jpg&#39;</span>
+
+<span class="c1"># converting images to gray</span>
 <span class="n">img</span> <span class="o">=</span> <span
                                     class="n">cv2</span><span class="o">.</span><span
                                     class="n">imread</span><span
@@ -20213,7 +20286,6 @@ Epoch 20/20
                                     class="o">.</span><span class="n">COLOR_BGR2RGB</span><span
                                     class="p">))</span>
 
-<span class="n">img_path</span> <span class="o">=</span> <span class="s1">&#39;uploads/image2.jpg&#39;</span>
 <span class="n">prediction</span> <span class="o">=</span> <span class="n">identify_dog</span><span
                                     class="p">(</span><span
                                     class="n">img_path</span><span
@@ -20235,7 +20307,9 @@ Epoch 20/20
 
 
                         <div class="output_subarea output_stream output_stdout output_text">
-<pre>(1, 1, 1, 2048)
+<pre>Downloading data from https://github.com/fchollet/deep-learning-models/releases/download/v0.2/resnet50_weights_tf_dim_ordering_tf_kernels_notop.h5
+94658560/94653016 [==============================] - 1s 0us/step
+(1, 1, 1, 2048)
 </pre>
                         </div>
                     </div>
@@ -20304,7 +20378,7 @@ Epoch 20/20
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[90]:</div>
+                <div class="prompt input_prompt">In&nbsp;[38]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -20323,14 +20397,14 @@ Epoch 20/20
 <span class="sd">    A message indicates the possible dog breed of the dog/human in the input image</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="c1">#converting images to gray</span>
+    <span class="c1"># converting images to gray</span>
     <span class="n">img</span> <span class="o">=</span> <span
                                     class="n">cv2</span><span class="o">.</span><span
                                     class="n">imread</span><span
                                     class="p">(</span><span
                                     class="n">img_path</span><span
                                     class="p">)</span>
-    <span class="c1"># showing the boundry box in the end</span>
+    <span class="c1"># show the boundry box in the end</span>
     <span class="n">plt</span><span class="o">.</span><span
                                     class="n">imshow</span><span
                                     class="p">(</span><span class="n">cv2</span><span
@@ -20440,7 +20514,7 @@ Epoch 20/20
         </div>
         <div class="cell border-box-sizing code_cell rendered">
             <div class="input">
-                <div class="prompt input_prompt">In&nbsp;[91]:</div>
+                <div class="prompt input_prompt">In&nbsp;[39]:</div>
                 <div class="inner_cell">
                     <div class="input_area">
                         <div class=" highlight hl-ipython3"><pre><span></span><span
@@ -20449,7 +20523,7 @@ Epoch 20/20
                                 class="ow">in</span> <span
                                 class="nb">sorted</span><span class="p">(</span><span
                                 class="n">glob</span><span
-                                class="p">(</span><span class="s2">&quot;uploads/*&quot;</span><span
+                                class="p">(</span><span class="s2">&quot;uploads/*.jpg&quot;</span><span
                                 class="p">)):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">img_path</span><span
                                     class="p">)</span>
@@ -20658,7 +20732,7 @@ uploads/image7.jpg
 
                         <div class="output_subarea output_stream output_stdout output_text">
 <pre>(1, 1, 1, 2048)
-This human looks similar to Silky_terrier
+This human looks similar to Beagle
 
 </pre>
                         </div>
